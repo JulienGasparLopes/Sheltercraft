@@ -2,6 +2,7 @@ package com.pinzen.survivalist.survival_age;
 
 import com.pinzen.survivalist.Survivalist;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -37,7 +38,7 @@ public class ModEvents {
                 return;
             }
 
-            if (state.is(BlockTags.BASE_STONE_OVERWORLD)) {
+            if (state.is(BlockTags.BASE_STONE_OVERWORLD) && event.getFace() == Direction.UP) {
                 player.swing(hand, true);
                 player.getCooldowns().addCooldown(heldItem, 10);
 
@@ -46,7 +47,7 @@ public class ModEvents {
                     return;
                 }
 
-                ItemStack customDrop = new ItemStack(Items.CHIPPED_FLINT.get());
+                ItemStack customDrop = new ItemStack(Items.SHARPENED_FLINT.get());
                 ItemEntity drop = new ItemEntity(
                         level,
                         pos.getX() + 0.5,

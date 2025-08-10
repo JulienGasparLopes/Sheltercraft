@@ -18,16 +18,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-/**
- * TODO
- * - Create Boulder item and make it drop from stone when mined with a flint_pickaxe
- * - (Optional) other stone must NOT drop anything when mined with a flint_pickaxe
- *
- * - Create PlantFiber item and make it drop from grass
- * - Allow to wovening PlantFiber to create Wicker
- * - Add WickerBasket item to allow to store items
- */
-
 @Mod(Survivalist.MOD_ID)
 public final class Survivalist {
     public static final String MOD_ID = "survivalist";

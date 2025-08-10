@@ -11,37 +11,36 @@ public class Items {
     public static final RegistryObject<Item> FLINT_HATCHET = Survivalist.REGISTER_ITEMS.register(
             "flint_hatchet",
             () -> new AxeItem(
-                    ToolMaterial.WOOD, 1, 1,
-                    new Item.Properties().durability(10).setId(Helpers.resKeyItem("flint_hatchet"))
+                    ToolTiers.FLINT_TIER, 1f, 	-3.2f,
+                    new Item.Properties().setId(Helpers.resKeyItem("flint_hatchet"))
             )
     );
     public static final RegistryObject<Item> FLINT_AXE = Survivalist.REGISTER_ITEMS.register(
             "flint_axe",
             () -> new AxeItem(
-                    ToolMaterial.WOOD, 1, 1,
-                    new Item.Properties().durability(50).setId(Helpers.resKeyItem("flint_axe"))
+                    ToolTiers.FLINT_TIER, 3f, 	-3.2f,
+                    new Item.Properties().setId(Helpers.resKeyItem("flint_axe"))
             )
     );
     public static final RegistryObject<Item> FLINT_PICKAXE = Survivalist.REGISTER_ITEMS.register(
             "flint_pickaxe",
             () -> new Item(
                     new Item.Properties()
-                            .pickaxe(ToolMaterial.WOOD, 1, 1)
-                            .durability(50)
+                            .pickaxe(ToolTiers.FLINT_TIER, 1f, -2.8f)
                             .setId(Helpers.resKeyItem("flint_pickaxe"))
             )
     );
     public static final RegistryObject<Item> FLINT_SHOVEL = Survivalist.REGISTER_ITEMS.register(
             "flint_shovel",
             () -> new ShovelItem(
-                    ToolMaterial.WOOD, 1, 1,
-                    new Item.Properties().durability(50).setId(Helpers.resKeyItem("flint_shovel"))
+                    ToolTiers.FLINT_TIER, 1.5f, 	-3.0f,
+                    new Item.Properties().setId(Helpers.resKeyItem("flint_shovel"))
             )
     );
 
     // Regular Items
-    public static final RegistryObject<Item> CHIPPED_FLINT = Survivalist.REGISTER_ITEMS.register(
-            "chipped_flint",
-            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("chipped_flint")))
+    public static final RegistryObject<Item> SHARPENED_FLINT = Survivalist.REGISTER_ITEMS.register(
+            "sharpened_flint",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("sharpened_flint")))
     );
 }

@@ -1,6 +1,6 @@
 {
   "model": {
     "type": "minecraft:model",
-    "model": "survivalist:item/chipped_flint"
+    "model": "survivalist:item/sharpened_flint"
   }
 }
