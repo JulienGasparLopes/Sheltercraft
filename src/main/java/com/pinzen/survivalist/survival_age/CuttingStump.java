@@ -14,9 +14,13 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+
+import java.util.List;
 
 public class CuttingStump extends Block implements EntityBlock {
 
@@ -24,6 +28,7 @@ public class CuttingStump extends Block implements EntityBlock {
         super(Block.Properties.of()
                 .setId(Survivalist.REGISTER_BLOCKS.key("cutting_stump"))
                 .strength(3.0f)
+                .requiresCorrectToolForDrops()
                 .noOcclusion());
     }
 
@@ -39,7 +44,7 @@ public class CuttingStump extends Block implements EntityBlock {
             if (be instanceof CuttingStumpBE cuttingStumpBE) {
                 ItemStack heldItem = pPlayer.getMainHandItem();
                 if (heldItem.is(ItemTags.AXES)) {
-                    ItemStack planks = cuttingStumpBE.processCutting();
+                    ItemStack planks = cuttingStumpBE.processCutting(pPlayer);
                     if (!planks.isEmpty()) {
                         pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
                         pLevel.addFreshEntity(new ItemEntity(
@@ -79,5 +84,20 @@ public class CuttingStump extends Block implements EntityBlock {
     @Override
     protected VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
         return Block.box(0, 0, 0, 16, 4, 16);
+    }
+
+    @Override
+    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
+        List<ItemStack> drops = super.getDrops(state, builder);
+
+        BlockEntity be = builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
+        if (be instanceof CuttingStumpBE myBe) {
+            ItemStack stored = myBe.getHeldItem();
+            if (!stored.isEmpty()) {
+                drops.add(stored.copy());
+            }
+        }
+
+        return drops;
     }
 }

@@ -11,9 +11,10 @@ I decided to create this mod as most of the "early-game survival" mods are curre
 
 ## Features
 
-- Flint chipping and early-game flint tools
-- Gathering logs now requires an axe
-- Cutting Stump to transform logs into planks (planks recipes are disabled)
+- Flint chipping (right click on stone) and early-game flint tools
+- Gathering logs now requires an axe (Flint Hatchet before log harvesting)
+- Sticks may be gathered from leaves
+- Cutting Stump to transform logs into planks and planks into sticks (planks and sticks recipes are disabled)
 
 ## References and Information
 
@@ -36,7 +37,6 @@ Be aware that for developing purposes, some textures were retrieved from other m
 For any question, suggestion or issue, feel free to open an issue.
 
 Here is a quick list of the next features I plan to add:
-- Improve CuttingStump to add a cooldown + number of axe hits before the log is transformed into planks.
 - PlantFiber from grass and wovening (bamboo will also be usable).
 - WickerBasket to store items (early-game storage).
 - FlintPickaxe harvests only boulders, no cobblestone.

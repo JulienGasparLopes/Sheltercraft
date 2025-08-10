@@ -20,10 +20,6 @@ import org.slf4j.Logger;
 
 /**
  * TODO
- * - Disable plank and sticks recipes
- * - Add internal counter to cutting stump to cut log after X left cliks
- * - Add cooldown to cutting stump
- *
  * - Create Boulder item and make it drop from stone when mined with a flint_pickaxe
  * - (Optional) other stone must NOT drop anything when mined with a flint_pickaxe
  *

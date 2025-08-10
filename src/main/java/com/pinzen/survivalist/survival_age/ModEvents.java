@@ -29,7 +29,7 @@ public class ModEvents {
         ItemStack heldItem = event.getItemStack();
         InteractionHand hand = event.getHand();
 
-        if (level.isClientSide) return;
+        if (level.isClientSide()) return;
 
         if (heldItem.is(net.minecraft.world.item.Items.FLINT)) {
             if (player.getCooldowns().isOnCooldown(heldItem)) {
@@ -74,6 +74,22 @@ public class ModEvents {
         if (event.getState().is(BlockTags.LOGS)) {
             if (!(event.getPlayer().getMainHandItem().getItem() instanceof AxeItem)){
                 level.destroyBlock(pos, false);
+            }
+        }
+
+        if (event.getState().is(BlockTags.LEAVES)) {
+            if (level instanceof Level LevelCasted) {
+                if (LevelCasted.random.nextInt(8) == 0) {
+                    ItemStack stick = new ItemStack(net.minecraft.world.item.Items.STICK);
+                    ItemEntity drop = new ItemEntity(
+                            LevelCasted,
+                            pos.getX() + 0.5,
+                            pos.getY() + 0.5,
+                            pos.getZ() + 0.5,
+                            stick
+                    );
+                    LevelCasted.addFreshEntity(drop);
+                }
             }
         }
     }

@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -21,11 +22,15 @@ import java.util.Optional;
 
 public class CuttingStumpBE extends BlockEntity {
 
-    private ItemStack heldItem;
+    private ItemStack heldItem = ItemStack.EMPTY;
+    private int axeBlowCount = 0;
 
     public CuttingStumpBE(BlockPos pos, BlockState state) {
         super(Blocks.CUTTING_STUMP_BE.get(), pos, state);
-        this.heldItem = ItemStack.EMPTY;
+    }
+
+    public ItemStack getHeldItem() {
+        return this.heldItem.copy();
     }
 
     public boolean addItem(ItemStack item) {
@@ -40,11 +45,22 @@ public class CuttingStumpBE extends BlockEntity {
         return false;
     }
 
-    public ItemStack processCutting() {
+    public ItemStack processCutting(Player player) {
         ItemStack returnedItems = ItemStack.EMPTY;
 
         ItemStack removedItem = this.heldItem.copy();
         if (removedItem.isEmpty()) return ItemStack.EMPTY;
+
+        if (player.getCooldowns().isOnCooldown(player.getMainHandItem())) {
+            return ItemStack.EMPTY;
+        }
+
+        axeBlowCount++;
+        player.getCooldowns().addCooldown(player.getMainHandItem(), 10);
+
+        if (axeBlowCount < 3) {
+            return ItemStack.EMPTY;
+        }
 
         if (removedItem.is(ItemTags.PLANKS)) {
             returnedItems = new ItemStack(Items.STICK);
@@ -54,7 +70,7 @@ public class CuttingStumpBE extends BlockEntity {
             ResourceLocation resLoc = BuiltInRegistries.ITEM.getKey(removedItem.getItem());
             ResourceLocation resLocPlanks = ResourceLocation.fromNamespaceAndPath(
                     resLoc.getNamespace(),
-                    resLoc.getPath().replace("log", "planks")
+                    resLoc.getPath().replace("log", "planks").replace("stripped_", "")
             );
 
             Optional<Holder.Reference<Item>> item = BuiltInRegistries.ITEM.get(resLocPlanks);
@@ -65,6 +81,7 @@ public class CuttingStumpBE extends BlockEntity {
 
         if (!returnedItems.isEmpty()) {
             this.heldItem = ItemStack.EMPTY;
+            this.axeBlowCount = 0;
             setChanged();
         }
         return returnedItems;
@@ -128,9 +145,5 @@ public class CuttingStumpBE extends BlockEntity {
         // Expand the bounding box to include your rendered item
         // Example: 2 blocks tall, centered on the block
         return new AABB(worldPosition).inflate(0.5, 0.5, 0.5);
-    }
-
-    public ItemStack getHeldItem() {
-        return this.heldItem.copy();
     }
 }

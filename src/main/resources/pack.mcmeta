@@ -1,13 +1,17 @@
 {
   "pack": {
-    "description": "${mod_id} resources",
+    "description": "Survivalist resources",
     "pack_format": 81
   },
   "filter": {
           "block": [
               {
                   "namespace": "minecraft",
-                  "path": "recipe/.*"
+                  "path": "recipe/.*_planks"
+              },
+              {
+                "namespace": "minecraft",
+                "path": "recipe\\/stick.*"
               }
           ]
       }
