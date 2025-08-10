@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "survivalist:block/simple_table"
+        }
+    }
+}
