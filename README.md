@@ -4,6 +4,11 @@ A minecraft mod aiming to provide a more challenging early-game survival experie
 
 I decided to create this mod as most of the "early-game survival" mods are currently abandoned and outdated.
 
+## Compatibility
+
+- Minecraft version: 1.21.8
+- Forge version: 58.0.4
+
 ## Features
 
 - Flint chipping and early-game flint tools
