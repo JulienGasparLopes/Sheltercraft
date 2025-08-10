@@ -8,11 +8,18 @@ import net.minecraftforge.registries.RegistryObject;
 public class Items {
 
     // Tools
+    public static final RegistryObject<Item> FLINT_HATCHET = Survivalist.REGISTER_ITEMS.register(
+            "flint_hatchet",
+            () -> new AxeItem(
+                    ToolMaterial.WOOD, 1, 1,
+                    new Item.Properties().durability(10).setId(Helpers.resKeyItem("flint_hatchet"))
+            )
+    );
     public static final RegistryObject<Item> FLINT_AXE = Survivalist.REGISTER_ITEMS.register(
             "flint_axe",
             () -> new AxeItem(
                     ToolMaterial.WOOD, 1, 1,
-                    new Item.Properties().setId(Helpers.resKeyItem("flint_axe"))
+                    new Item.Properties().durability(50).setId(Helpers.resKeyItem("flint_axe"))
             )
     );
     public static final RegistryObject<Item> FLINT_PICKAXE = Survivalist.REGISTER_ITEMS.register(
@@ -20,6 +27,7 @@ public class Items {
             () -> new Item(
                     new Item.Properties()
                             .pickaxe(ToolMaterial.WOOD, 1, 1)
+                            .durability(50)
                             .setId(Helpers.resKeyItem("flint_pickaxe"))
             )
     );
@@ -27,7 +35,7 @@ public class Items {
             "flint_shovel",
             () -> new ShovelItem(
                     ToolMaterial.WOOD, 1, 1,
-                    new Item.Properties().setId(Helpers.resKeyItem("flint_shovel"))
+                    new Item.Properties().durability(50).setId(Helpers.resKeyItem("flint_shovel"))
             )
     );
 

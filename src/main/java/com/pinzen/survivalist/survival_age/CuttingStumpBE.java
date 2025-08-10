@@ -7,8 +7,10 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.storage.ValueInput;
@@ -26,34 +28,46 @@ public class CuttingStumpBE extends BlockEntity {
         this.heldItem = ItemStack.EMPTY;
     }
 
-    public boolean addLog(ItemStack log) {
+    public boolean addItem(ItemStack item) {
         if (this.heldItem.isEmpty()) {
-            this.heldItem = log.copy();
-            this.heldItem.setCount(1);
-            setChanged();
-            return true;
+            if(item.is(ItemTags.LOGS) || item.is(ItemTags.PLANKS)) {
+                this.heldItem = item.copy();
+                this.heldItem.setCount(1);
+                setChanged();
+                return true;
+            }
         }
         return false;
     }
 
-    public ItemStack cutLog() {
-        ItemStack returnedPlanks = ItemStack.EMPTY;
+    public ItemStack processCutting() {
+        ItemStack returnedItems = ItemStack.EMPTY;
 
-        ItemStack removedLog = this.heldItem.copy();
-        ResourceLocation resLoc = BuiltInRegistries.ITEM.getKey(removedLog.getItem());
-        ResourceLocation resLocPlanks = ResourceLocation.fromNamespaceAndPath(
-                resLoc.getNamespace(),
-                resLoc.getPath().replace("log", "planks")
-        );
+        ItemStack removedItem = this.heldItem.copy();
+        if (removedItem.isEmpty()) return ItemStack.EMPTY;
 
-        Optional<Holder.Reference<Item>> item = BuiltInRegistries.ITEM.get(resLocPlanks);
-        if(item.isPresent()) {
-            returnedPlanks = new ItemStack(item.get(), 3);
+        if (removedItem.is(ItemTags.PLANKS)) {
+            returnedItems = new ItemStack(Items.STICK);
+            returnedItems.setCount(2);
+        }
+        else {
+            ResourceLocation resLoc = BuiltInRegistries.ITEM.getKey(removedItem.getItem());
+            ResourceLocation resLocPlanks = ResourceLocation.fromNamespaceAndPath(
+                    resLoc.getNamespace(),
+                    resLoc.getPath().replace("log", "planks")
+            );
+
+            Optional<Holder.Reference<Item>> item = BuiltInRegistries.ITEM.get(resLocPlanks);
+            if(item.isPresent()) {
+                returnedItems = new ItemStack(item.get(), 3);
+            }
         }
 
-        this.heldItem = ItemStack.EMPTY;
-        setChanged();
-        return returnedPlanks;
+        if (!returnedItems.isEmpty()) {
+            this.heldItem = ItemStack.EMPTY;
+            setChanged();
+        }
+        return returnedItems;
     }
 
     @Override

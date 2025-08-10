@@ -1,6 +1,9 @@
 {
+  "item.survivalist.flint_hatchet": "Flint Hatchet",
   "item.survivalist.flint_axe": "Flint Axe",
   "item.survivalist.flint_pickaxe": "Flint Pickaxe",
   "item.survivalist.flint_shovel": "Flint Shovel",
-  "item.survivalist.chipped_flint": "Chipped Flint"
+  "item.survivalist.chipped_flint": "Chipped Flint",
+  "block.survivalist.cutting_stump": "Cutting Stump",
+  "item.survivalist.simple_table": "Simple Table"
 }

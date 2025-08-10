@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "mirrored": true,
+  "pattern": [
+    "LL"
+  ],
+  "key": {
+    "L": "#minecraft:logs"
+  },
+  "result": {
+    "id": "survivalist:cutting_stump"
+  }
+}

@@ -39,7 +39,7 @@ public class CuttingStump extends Block implements EntityBlock {
             if (be instanceof CuttingStumpBE cuttingStumpBE) {
                 ItemStack heldItem = pPlayer.getMainHandItem();
                 if (heldItem.is(ItemTags.AXES)) {
-                    ItemStack planks = cuttingStumpBE.cutLog();
+                    ItemStack planks = cuttingStumpBE.processCutting();
                     if (!planks.isEmpty()) {
                         pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
                         pLevel.addFreshEntity(new ItemEntity(
@@ -64,15 +64,13 @@ public class CuttingStump extends Block implements EntityBlock {
         BlockEntity be = pLevel.getBlockEntity(pPos);
         ItemStack heldItem = pPlayer.getMainHandItem();
         if (be instanceof CuttingStumpBE cuttingStumpBE) {
-            if (heldItem.is(ItemTags.LOGS)) {
-                boolean logAdded = cuttingStumpBE.addLog(heldItem);
-                if (logAdded) {
-                    if (!pLevel.isClientSide) {
-                        pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
-                        heldItem.shrink(1);
-                    }
-                    return InteractionResult.SUCCESS;
+            boolean itemAdded = cuttingStumpBE.addItem(heldItem);
+            if (itemAdded) {
+                if (!pLevel.isClientSide) {
+                    pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
+                    heldItem.shrink(1);
                 }
+                return InteractionResult.SUCCESS;
             }
         }
         return InteractionResult.PASS;

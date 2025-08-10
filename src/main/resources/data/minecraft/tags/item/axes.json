@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "survivalist:flint_axe"
+    "survivalist:flint_axe",
+    "survivalist:flint_hatchet"
   ]
 }
