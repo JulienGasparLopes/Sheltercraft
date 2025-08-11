@@ -18,6 +18,11 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
+/**
+ * TODO
+ * - Flint tools repairable with sharpened flint (currently wood)
+ */
+
 @Mod(Survivalist.MOD_ID)
 public final class Survivalist {
     public static final String MOD_ID = "survivalist";

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "mirrored": true,
+  "pattern": [
+    "F F",
+    " F ",
+    "F F"
+  ],
+  "key": {
+    "F":  "survivalist:plant_fiber"
+  },
+  "result": {
+    "id": "survivalist:wicker"
+  }
+}

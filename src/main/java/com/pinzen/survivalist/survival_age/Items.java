@@ -8,6 +8,13 @@ import net.minecraftforge.registries.RegistryObject;
 public class Items {
 
     // Tools
+    public static final RegistryObject<Item> FLINT_SICKLE = Survivalist.REGISTER_ITEMS.register(
+            "flint_sickle",
+            () -> new Sickle(
+                    ToolTiers.FLINT_TIER,
+                    new Item.Properties().setId(Helpers.resKeyItem("flint_sickle"))
+            )
+    );
     public static final RegistryObject<Item> FLINT_HATCHET = Survivalist.REGISTER_ITEMS.register(
             "flint_hatchet",
             () -> new AxeItem(
@@ -43,4 +50,13 @@ public class Items {
             "sharpened_flint",
             () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("sharpened_flint")))
     );
+    public static final RegistryObject<Item> PLANT_FIBER = Survivalist.REGISTER_ITEMS.register(
+            "plant_fiber",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("plant_fiber")))
+    );
+    public static final RegistryObject<Item> WICKER = Survivalist.REGISTER_ITEMS.register(
+            "wicker",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("wicker")))
+    );
+
 }
