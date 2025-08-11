@@ -22,4 +22,14 @@ public class Blocks {
                     Set.of(CUTTING_STUMP.get())
             ));
 
+    public static final RegistryObject<Block> WICKER_BASKET = Survivalist.REGISTER_BLOCKS.register("wicker_basket", WickerBasket::new);
+    public static final RegistryObject<Item> WICKER_BASKET_ITEM = Survivalist.REGISTER_ITEMS.register("wicker_basket",
+            () -> new BlockItem(Blocks.WICKER_BASKET.get(), new Item.Properties().setId(Survivalist.REGISTER_ITEMS.key("wicker_basket"))));
+
+    public static final RegistryObject<BlockEntityType<WickerBasketBE>> WICKER_BASKET_BE = Survivalist.REGISTER_BLOCK_ENTITIES.register(
+            "wicket_basket_be",
+            () -> new BlockEntityType<>(
+                    WickerBasketBE::new,
+                    Set.of(WICKER_BASKET.get())
+            ));
 }

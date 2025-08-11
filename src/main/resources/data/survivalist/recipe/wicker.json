@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "mirrored": true,
   "pattern": [
     "F F",
     " F ",
