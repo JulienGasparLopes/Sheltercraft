@@ -47,57 +47,43 @@ public class WickerBasketMenu extends AbstractContainerMenu {
 
     @Override
     public ItemStack quickMoveStack(Player player, int quickMovedSlotIndex) {
-        // The quick moved slot stack
+        // Code from : https://docs.minecraftforge.net/en/latest/gui/menus/#quickmovestack
+        // TODO: fix to avoid moving remaining items when only storing part of the stack
+
         ItemStack quickMovedStack = ItemStack.EMPTY;
-        // The quick moved slot
         Slot quickMovedSlot = this.slots.get(quickMovedSlotIndex);
 
         // If the slot is in the valid range and the slot is not empty
-        if (quickMovedSlot != null && quickMovedSlot.hasItem()) {
-            // Get the raw stack to move
+        if (quickMovedSlot.hasItem()) {
             ItemStack rawStack = quickMovedSlot.getItem();
-            // Set the slot stack to a copy of the raw stack
             quickMovedStack = rawStack.copy();
 
-            /*
-            The following quick move logic can be simplified to if in data inventory,
-            try to move to player inventory/hotbar and vice versa for containers
-            that cannot transform data (e.g. chests).
-            */
-
-            // If the quick move was performed on the data inventory result slot
-            if (quickMovedSlotIndex == 0) {
+            // If the quick move was performed on the data inventory
+            if (quickMovedSlotIndex < WickerBasketBE.SLOT_COUNT ) {
                 // Try to move the result slot into the player inventory/hotbar
                 if (!this.moveItemStackTo(rawStack, 5, 41, true)) {
-                    // If cannot move, no longer quick move
+                    // If it cannot be moved, stop quick move
                     return ItemStack.EMPTY;
                 }
-
-                // Perform logic on result slot quick move
                 quickMovedSlot.onQuickCraft(rawStack, quickMovedStack);
             }
             // Else if the quick move was performed on the player inventory or hotbar slot
-            else if (quickMovedSlotIndex >= 5 && quickMovedSlotIndex < 41) {
+            else if (quickMovedSlotIndex < WickerBasketBE.SLOT_COUNT + 27 + 9) {
                 // Try to move the inventory/hotbar slot into the data inventory input slots
                 if (!this.moveItemStackTo(rawStack, 1, 5, false)) {
-                    // If cannot move and in player inventory slot, try to move to hotbar
-                    if (quickMovedSlotIndex < 32) {
+                    // If it cannot be moved in player inventory slot, try to move to hotbar
+                    if (quickMovedSlotIndex < WickerBasketBE.SLOT_COUNT + 27) {
                         if (!this.moveItemStackTo(rawStack, 32, 41, false)) {
-                            // If cannot move, no longer quick move
+                            // If it cannot be moved, stop quick move
                             return ItemStack.EMPTY;
                         }
                     }
                     // Else try to move hotbar into player inventory slot
                     else if (!this.moveItemStackTo(rawStack, 5, 32, false)) {
-                        // If cannot move, no longer quick move
+                        // If it cannot be moved, stop quick move
                         return ItemStack.EMPTY;
                     }
                 }
-            }
-            // Else if the quick move was performed on the data inventory input slots, try to move to player inventory/hotbar
-            else if (!this.moveItemStackTo(rawStack, 5, 41, false)) {
-                // If cannot move, no longer quick move
-                return ItemStack.EMPTY;
             }
 
             if (rawStack.isEmpty()) {
@@ -121,6 +107,6 @@ public class WickerBasketMenu extends AbstractContainerMenu {
             quickMovedSlot.onTake(player, rawStack);
         }
 
-        return quickMovedStack; // Return the slot stack
+        return quickMovedStack;
     }
 }

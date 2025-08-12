@@ -26,8 +26,6 @@ import java.awt.*;
 
 /**
  * TODO
- * - Flint tools repairable with sharpened flint (currently wood)
- * - Fix WickerBasket quick access
  * - WickerBasket texture
  */
 

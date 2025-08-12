@@ -19,8 +19,8 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.*;
 
 public class WickerBasketBE extends BlockEntity implements MenuProvider, Container {
-    private static final int SLOT_COUNT = 6;
-    private static final int MAX_STACK = 16;
+    public static final int SLOT_COUNT = 6;
+    public static final int MAX_STACK = 16;
 
     private final NonNullList<ItemStack> items;
 
