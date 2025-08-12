@@ -28,7 +28,7 @@ public class CuttingStump extends Block implements EntityBlock {
     public CuttingStump() {
         super(Block.Properties.of()
                 .setId(Sheltercraft.REGISTER_BLOCKS.key("cutting_stump"))
-                .strength(3.0f)
+                .strength(2.0f)
                 .requiresCorrectToolForDrops()
                 .noOcclusion());
     }

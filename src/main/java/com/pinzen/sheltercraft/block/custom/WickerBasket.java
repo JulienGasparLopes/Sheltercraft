@@ -20,7 +20,7 @@ public class WickerBasket extends Block implements EntityBlock {
     public WickerBasket() {
         super(Block.Properties.of()
                 .setId(Sheltercraft.REGISTER_BLOCKS.key("wicker_basket"))
-                .strength(3.0f)
+                .strength(1.0f)
                 .noOcclusion());
     }
 
