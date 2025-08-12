@@ -1,10 +1,8 @@
 package com.pinzen.survivalist;
 
 import com.mojang.logging.LogUtils;
-import com.pinzen.survivalist.survival_age.Blocks;
-import com.pinzen.survivalist.survival_age.CuttingStumpRenderer;
-import com.pinzen.survivalist.survival_age.Menus;
-import com.pinzen.survivalist.survival_age.WickerBasketScreen;
+import com.pinzen.survivalist.survival_age.*;
+import com.pinzen.survivalist.survival_age.Items;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.world.inventory.MenuType;
@@ -22,13 +20,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-import java.awt.*;
-
-/**
- * TODO
- * - WickerBasket texture
- */
-
 @Mod(Survivalist.MOD_ID)
 public final class Survivalist {
     public static final String MOD_ID = "survivalist";
@@ -44,10 +35,10 @@ public final class Survivalist {
 
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
-        new com.pinzen.survivalist.survival_age.Items(); // Not sure if this is needed
-        new com.pinzen.survivalist.survival_age.Blocks(); // Not sure if this is needed
-        new com.pinzen.survivalist.survival_age.ModEvents(); // Not sure if this is needed
-        new com.pinzen.survivalist.survival_age.Menus(); // Not sure if this is needed
+        new Items();
+        new Blocks();
+        new Events();
+        new Menus();
 
         REGISTER_BLOCKS.register(modBusGroup);
         REGISTER_ITEMS.register(modBusGroup);
