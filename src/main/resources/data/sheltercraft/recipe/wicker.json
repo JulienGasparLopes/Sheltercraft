@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F F",
+    " F ",
+    "F F"
+  ],
+  "key": {
+    "F":  "sheltercraft:plant_fiber"
+  },
+  "result": {
+    "id": "sheltercraft:wicker"
+  }
+}

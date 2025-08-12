@@ -1,4 +1,4 @@
-# Survivalist
+# Sheltercraft
 
 Minecraft mod providing a smoother early-game evolution.
 

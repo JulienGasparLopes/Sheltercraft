@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W W",
+    "W W",
+    "WWW"
+  ],
+  "key": {
+    "W": "sheltercraft:wicker"
+  },
+  "result": {
+    "id": "sheltercraft:wicker_basket"
+  }
+}

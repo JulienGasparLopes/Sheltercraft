@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LL"
+  ],
+  "key": {
+    "L": "#minecraft:logs"
+  },
+  "result": {
+    "id": "sheltercraft:cutting_stump"
+  }
+}
