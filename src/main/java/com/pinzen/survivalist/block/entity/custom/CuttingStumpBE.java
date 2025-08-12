@@ -1,5 +1,6 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.block.entity.custom;
 
+import com.pinzen.survivalist.block.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
@@ -26,7 +27,7 @@ public class CuttingStumpBE extends BlockEntity {
     private int axeBlowCount = 0;
 
     public CuttingStumpBE(BlockPos pos, BlockState state) {
-        super(Blocks.CUTTING_STUMP_BE.get(), pos, state);
+        super(ModBlocks.CUTTING_STUMP_BE.get(), pos, state);
     }
 
     public ItemStack getHeldItem() {

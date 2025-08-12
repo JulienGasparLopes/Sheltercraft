@@ -1,5 +1,6 @@
-package com.pinzen.survivalist;
+package com.pinzen.survivalist.util;
 
+import com.pinzen.survivalist.Survivalist;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;

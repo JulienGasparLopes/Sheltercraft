@@ -1,6 +1,7 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.event;
 
 import com.pinzen.survivalist.Survivalist;
+import com.pinzen.survivalist.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
@@ -47,7 +48,7 @@ public class ModEvents {
                     return;
                 }
 
-                ItemStack customDrop = new ItemStack(Items.SHARPENED_FLINT.get());
+                ItemStack customDrop = new ItemStack(ModItems.SHARPENED_FLINT.get());
                 ItemEntity drop = new ItemEntity(
                         level,
                         pos.getX() + 0.5,
