@@ -1,5 +1,7 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.screen.custom;
 
+import com.pinzen.survivalist.block.entity.custom.WickerBasketBE;
+import com.pinzen.survivalist.screen.ModMenuTypes;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -17,7 +19,7 @@ public class WickerBasketMenu extends AbstractContainerMenu {
 
 
     public WickerBasketMenu(int id, Inventory playerInventory, BlockEntity be) {
-        super(Menus.WICKER_BASKET_MENU.get(), id);
+        super(ModMenuTypes.WICKER_BASKET_MENU.get(), id);
         this.wickerBasketBE = (WickerBasketBE) be;
 
         // Chest slots (3x2)

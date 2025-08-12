@@ -1,4 +1,4 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.datagen;
 
 import com.pinzen.survivalist.Survivalist;
 import net.minecraft.core.HolderLookup;

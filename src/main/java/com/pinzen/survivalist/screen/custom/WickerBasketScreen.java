@@ -1,4 +1,4 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.screen.custom;
 
 import com.pinzen.survivalist.Survivalist;
 import net.minecraft.client.gui.GuiGraphics;
@@ -6,8 +6,6 @@ import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
-
-import java.awt.*;
 
 public class WickerBasketScreen extends AbstractContainerScreen<WickerBasketMenu> {
     private static final ResourceLocation TEXTURE = ResourceLocation.fromNamespaceAndPath(Survivalist.MOD_ID, "textures/gui/wicker_basket.png");

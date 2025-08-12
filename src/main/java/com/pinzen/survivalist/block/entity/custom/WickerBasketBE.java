@@ -1,5 +1,7 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.block.entity.custom;
 
+import com.pinzen.survivalist.block.ModBlocks;
+import com.pinzen.survivalist.screen.custom.WickerBasketMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
@@ -16,8 +18,6 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.*;
-
 public class WickerBasketBE extends BlockEntity implements MenuProvider, Container {
     public static final int SLOT_COUNT = 6;
     public static final int MAX_STACK = 16;
@@ -25,7 +25,7 @@ public class WickerBasketBE extends BlockEntity implements MenuProvider, Contain
     private final NonNullList<ItemStack> items;
 
     public WickerBasketBE(BlockPos pPos, BlockState pBlockState) {
-        super(Blocks.WICKER_BASKET_BE.get(), pPos, pBlockState);
+        super(ModBlocks.WICKER_BASKET_BE.get(), pPos, pBlockState);
         this.items = NonNullList.withSize(SLOT_COUNT, ItemStack.EMPTY);
     }
 

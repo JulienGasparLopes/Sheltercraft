@@ -1,13 +1,13 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.block.entity.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.pinzen.survivalist.block.entity.custom.CuttingStumpBE;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 public class CuttingStumpRenderer implements BlockEntityRenderer<CuttingStumpBE> {

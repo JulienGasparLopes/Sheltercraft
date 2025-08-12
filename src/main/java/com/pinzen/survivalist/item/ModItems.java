@@ -1,31 +1,32 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.item;
 
-import com.pinzen.survivalist.Helpers;
+import com.pinzen.survivalist.util.Helpers;
 import com.pinzen.survivalist.Survivalist;
+import com.pinzen.survivalist.item.custom.Sickle;
 import net.minecraft.world.item.*;
 import net.minecraftforge.registries.RegistryObject;
 
-public class Items {
+public class ModItems {
 
     // Tools
     public static final RegistryObject<Item> FLINT_SICKLE = Survivalist.REGISTER_ITEMS.register(
             "flint_sickle",
             () -> new Sickle(
-                    ToolTiers.FLINT_TIER,
+                    ModToolTiers.FLINT_TIER,
                     new Item.Properties().setId(Helpers.resKeyItem("flint_sickle"))
             )
     );
     public static final RegistryObject<Item> FLINT_HATCHET = Survivalist.REGISTER_ITEMS.register(
             "flint_hatchet",
             () -> new AxeItem(
-                    ToolTiers.FLINT_TIER, 1f, 	-3.2f,
+                    ModToolTiers.FLINT_TIER, 1f, 	-3.2f,
                     new Item.Properties().setId(Helpers.resKeyItem("flint_hatchet"))
             )
     );
     public static final RegistryObject<Item> FLINT_AXE = Survivalist.REGISTER_ITEMS.register(
             "flint_axe",
             () -> new AxeItem(
-                    ToolTiers.FLINT_TIER, 3f, 	-3.2f,
+                    ModToolTiers.FLINT_TIER, 3f, 	-3.2f,
                     new Item.Properties().setId(Helpers.resKeyItem("flint_axe"))
             )
     );
@@ -33,14 +34,14 @@ public class Items {
             "flint_pickaxe",
             () -> new Item(
                     new Item.Properties()
-                            .pickaxe(ToolTiers.FLINT_TIER, 1f, -2.8f)
+                            .pickaxe(ModToolTiers.FLINT_TIER, 1f, -2.8f)
                             .setId(Helpers.resKeyItem("flint_pickaxe"))
             )
     );
     public static final RegistryObject<Item> FLINT_SHOVEL = Survivalist.REGISTER_ITEMS.register(
             "flint_shovel",
             () -> new ShovelItem(
-                    ToolTiers.FLINT_TIER, 1.5f, 	-3.0f,
+                    ModToolTiers.FLINT_TIER, 1.5f, 	-3.0f,
                     new Item.Properties().setId(Helpers.resKeyItem("flint_shovel"))
             )
     );

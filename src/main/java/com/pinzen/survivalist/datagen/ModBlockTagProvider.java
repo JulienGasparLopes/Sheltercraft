@@ -1,6 +1,7 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.datagen;
 
 import com.pinzen.survivalist.Survivalist;
+import com.pinzen.survivalist.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Blocks;
@@ -17,7 +18,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        tag(Tags.MINEABLE_WITH_SICKLE)
+        tag(ModTags.MINEABLE_WITH_SICKLE)
                 .add(Blocks.SHORT_GRASS)
                 .add(Blocks.TALL_GRASS)
                 .add(Blocks.FERN)

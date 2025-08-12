@@ -1,5 +1,6 @@
-package com.pinzen.survivalist.survival_age;
+package com.pinzen.survivalist.item.custom;
 
+import com.pinzen.survivalist.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -9,7 +10,7 @@ import net.minecraft.world.item.ToolMaterial;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
-import static com.pinzen.survivalist.survival_age.Tags.MINEABLE_WITH_SICKLE;
+import static com.pinzen.survivalist.util.ModTags.MINEABLE_WITH_SICKLE;
 
 public class Sickle extends Item {
     public Sickle(ToolMaterial pToolMaterial, Properties pProperties) {
@@ -31,7 +32,7 @@ public class Sickle extends Item {
                             pPos.getX() + 0.5f,
                             pPos.getY() + 0.5f,
                             pPos.getZ() + 0.5f,
-                            new ItemStack(Items.PLANT_FIBER.get())
+                            new ItemStack(ModItems.PLANT_FIBER.get())
                     )
             );
         }

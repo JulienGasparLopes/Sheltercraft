@@ -1,8 +1,12 @@
 package com.pinzen.survivalist;
 
 import com.mojang.logging.LogUtils;
-import com.pinzen.survivalist.survival_age.*;
-import com.pinzen.survivalist.survival_age.Items;
+import com.pinzen.survivalist.block.ModBlocks;
+import com.pinzen.survivalist.block.entity.renderer.CuttingStumpRenderer;
+import com.pinzen.survivalist.event.ModEvents;
+import com.pinzen.survivalist.screen.ModMenuTypes;
+import com.pinzen.survivalist.screen.custom.WickerBasketScreen;
+import com.pinzen.survivalist.item.ModItems;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.world.inventory.MenuType;
@@ -35,10 +39,10 @@ public final class Survivalist {
 
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
-        new Items();
-        new Blocks();
-        new Events();
-        new Menus();
+        new ModItems();
+        new ModBlocks();
+        new ModEvents();
+        new ModMenuTypes();
 
         REGISTER_BLOCKS.register(modBusGroup);
         REGISTER_ITEMS.register(modBusGroup);
@@ -57,8 +61,8 @@ public final class Survivalist {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            BlockEntityRenderers.register(Blocks.CUTTING_STUMP_BE.get(), CuttingStumpRenderer::new);
-            MenuScreens.register(Menus.WICKER_BASKET_MENU.get(), WickerBasketScreen::new);
+            BlockEntityRenderers.register(ModBlocks.CUTTING_STUMP_BE.get(), CuttingStumpRenderer::new);
+            MenuScreens.register(ModMenuTypes.WICKER_BASKET_MENU.get(), WickerBasketScreen::new);
         }
     }
 }
