@@ -2,15 +2,14 @@
   "type": "minecraft:crafting_shaped",
   "mirrored": true,
   "pattern": [
-    " FF",
-    " SF",
-    " S "
+    "SF",
+    " F"
   ],
   "key": {
-    "F":  "sheltercraft:flint_flake",
+    "F":  "sheltercraft:sharpened_flint",
     "S": "minecraft:stick"
   },
   "result": {
-    "id": "sheltercraft:flint_axe"
+    "id": "sheltercraft:flint_sickle"
   }
 }

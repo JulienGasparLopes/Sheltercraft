@@ -1,11 +1,22 @@
 {
+    "item.sheltercraft.flint_flake": "Flint Flake",
+    "item.sheltercraft.sharpened_flint": "Sharpened Flint",
+
     "item.sheltercraft.flint_hatchet": "Flint Hatchet",
     "item.sheltercraft.flint_sickle": "Flint Sickle",
     "item.sheltercraft.flint_axe": "Flint Axe",
     "item.sheltercraft.flint_pickaxe": "Flint Pickaxe",
     "item.sheltercraft.flint_shovel": "Flint Shovel",
-    "item.sheltercraft.sharpened_flint": "Sharpened Flint",
+
+    "item.sheltercraft.sharpened_flint_hatchet": "Sharpened Flint Hatchet",
+    "item.sheltercraft.sharpened_flint_sickle": "Sharpened Flint Sickle",
+    "item.sheltercraft.sharpened_flint_axe": "Sharpened Flint Axe",
+    "item.sheltercraft.sharpened_flint_pickaxe": "Sharpened Flint Pickaxe",
+    "item.sheltercraft.sharpened_flint_shovel": "Sharpened Flint Shovel",
+
     "item.sheltercraft.plant_fiber": "Plant Fiber",
     "item.sheltercraft.wicker": "Wicker",
-    "block.sheltercraft.cutting_stump": "Cutting Stump"
+
+    "block.sheltercraft.cutting_stump": "Cutting Stump",
+    "block.sheltercraft.granite_with_whetstone": "Granite with Whetstone"
 }
