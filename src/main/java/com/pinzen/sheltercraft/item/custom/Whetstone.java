@@ -11,7 +11,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemUseAnimation;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public class Whetstone extends Item {
@@ -36,35 +35,30 @@ public class Whetstone extends Item {
             player.startUsingItem(hand);
             return InteractionResult.CONSUME;
         }
-
         return InteractionResult.FAIL;
     }
 
     @Override
     public void onUseTick(Level level, LivingEntity entity, ItemStack stack, int remainingUseDuration) {
         if (!level.isClientSide && entity instanceof Player player) {
-            if (player.getOffhandItem().is(Items.FLINT)) {
+            ItemStack offhand = player.getOffhandItem();
+            ItemStack mainHand = player.getMainHandItem();
+            if (offhand.is(ModItems.FLINT_FLAKE.get())) {
+                if (remainingUseDuration <= 1) {
+                    ItemStack sharpened = new ItemStack(ModItems.SHARPENED_FLINT.get());
+                    offhand.shrink(1);
+                    mainHand.shrink(1);
+                    player.addItem(sharpened);
+                    return;
+                }
                 if (remainingUseDuration % 5 == 0) {
-                    level.playSound(null, player.blockPosition(), SoundEvents.GRINDSTONE_USE, SoundSource.PLAYERS, 0.5f, 1.0f);
+                    level.playSound(null, player.blockPosition(), SoundEvents.STONE_HIT, SoundSource.PLAYERS, 0.5f, 1.0f);
+                    // player.swing(InteractionHand.MAIN_HAND); // Not Working
+                    player.spawnItemParticles(mainHand, 7);
                 }
             } else {
                 player.releaseUsingItem();
             }
         }
-    }
-
-    @Override
-    public boolean releaseUsing(ItemStack pStack, Level pLevel, LivingEntity pEntity, int pTimeLeft) {
-        if (!pLevel.isClientSide && pEntity instanceof Player player) {
-            ItemStack offhand = player.getOffhandItem();
-
-            if (offhand.is(ModItems.FLINT_FLAKE.get())) {
-                ItemStack sharpened = new ItemStack(ModItems.SHARPENED_FLINT.get());
-                offhand.shrink(1);
-                player.addItem(sharpened);
-                return true;
-            }
-        }
-        return super.releaseUsing(pStack, pLevel, pEntity, pTimeLeft);
     }
 }

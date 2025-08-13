@@ -5,6 +5,7 @@ import com.pinzen.sheltercraft.block.custom.CuttingStump;
 import com.pinzen.sheltercraft.block.custom.Strainer;
 import com.pinzen.sheltercraft.block.entity.custom.CuttingStumpBE;
 import com.pinzen.sheltercraft.block.custom.WickerBasket;
+import com.pinzen.sheltercraft.block.entity.custom.StrainerBE;
 import com.pinzen.sheltercraft.block.entity.custom.WickerBasketBE;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -42,6 +43,12 @@ public class ModBlocks {
     public static final RegistryObject<Item> STRAINER_ITEM = Sheltercraft.REGISTER_ITEMS.register("strainer",
             () -> new BlockItem(ModBlocks.STRAINER.get(), new Item.Properties().setId(Sheltercraft.REGISTER_ITEMS.key("strainer"))));
 
+    public static final RegistryObject<BlockEntityType<StrainerBE>> STRAINER_BE = Sheltercraft.REGISTER_BLOCK_ENTITIES.register(
+            "strainer_be",
+            () -> new BlockEntityType<>(
+                    StrainerBE::new,
+                    Set.of(STRAINER.get())
+            ));
 
     public static final RegistryObject<Block> GRANITE_WITH_WHETSTONE = Sheltercraft.REGISTER_BLOCKS.register("granite_with_whetstone", () -> new Block(
             Block.Properties.of()

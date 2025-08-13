@@ -3,12 +3,15 @@ package com.pinzen.sheltercraft;
 import com.mojang.logging.LogUtils;
 import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.renderer.CuttingStumpRenderer;
+import com.pinzen.sheltercraft.block.entity.renderer.StrainerRenderer;
 import com.pinzen.sheltercraft.event.ModEvents;
 import com.pinzen.sheltercraft.screen.ModMenuTypes;
 import com.pinzen.sheltercraft.screen.custom.WickerBasketScreen;
 import com.pinzen.sheltercraft.item.ModItems;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
@@ -23,6 +26,13 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
+
+/**
+ * TODO:
+ * - Disable wooden and stone tools crafting
+ * - Add recipes for items variants of blocks
+ * - Rename to NaturalWhetstone ?
+ */
 
 @Mod(Sheltercraft.MOD_ID)
 public final class Sheltercraft {
@@ -62,6 +72,8 @@ public final class Sheltercraft {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             BlockEntityRenderers.register(ModBlocks.CUTTING_STUMP_BE.get(), CuttingStumpRenderer::new);
+            BlockEntityRenderers.register(ModBlocks.STRAINER_BE.get(), StrainerRenderer::new);
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.STRAINER.get(), ChunkSectionLayer.CUTOUT);
             MenuScreens.register(ModMenuTypes.WICKER_BASKET_MENU.get(), WickerBasketScreen::new);
         }
     }
