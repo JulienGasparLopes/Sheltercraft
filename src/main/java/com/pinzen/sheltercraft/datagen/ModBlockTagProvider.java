@@ -23,6 +23,5 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(Blocks.TALL_GRASS)
                 .add(Blocks.FERN)
                 .add(Blocks.LARGE_FERN);
-        Sheltercraft.LOGGER.warn("jkj done add tags !!!");
     }
 }

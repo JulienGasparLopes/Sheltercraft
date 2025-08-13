@@ -37,13 +37,13 @@ public class ModBlocks {
                     Set.of(WICKER_BASKET.get())
             ));
 
-    public static final RegistryObject<Block> GRANIT_WITH_WHETSTONE = Sheltercraft.REGISTER_BLOCKS.register("granit_with_whetstone", () -> new Block(
+    public static final RegistryObject<Block> GRANITE_WITH_WHETSTONE = Sheltercraft.REGISTER_BLOCKS.register("granite_with_whetstone", () -> new Block(
             Block.Properties.of()
-                    .setId(Sheltercraft.REGISTER_BLOCKS.key("granit_with_whetstone"))
+                    .setId(Sheltercraft.REGISTER_BLOCKS.key("granite_with_whetstone"))
                     .strength(3.0f)
                     .requiresCorrectToolForDrops()
     ));
-    public static final RegistryObject<Item> GRANIT_WITH_WHETSTONE_ITEM = Sheltercraft.REGISTER_ITEMS.register("granit_with_whetstone",
-            () -> new BlockItem(ModBlocks.GRANIT_WITH_WHETSTONE.get(), new Item.Properties().setId(Sheltercraft.REGISTER_ITEMS.key("granit_with_whetstone"))));
+    public static final RegistryObject<Item> GRANITE_WITH_WHETSTONE_ITEM = Sheltercraft.REGISTER_ITEMS.register("granite_with_whetstone",
+            () -> new BlockItem(ModBlocks.GRANITE_WITH_WHETSTONE.get(), new Item.Properties().setId(Sheltercraft.REGISTER_ITEMS.key("granite_with_whetstone"))));
 
 }

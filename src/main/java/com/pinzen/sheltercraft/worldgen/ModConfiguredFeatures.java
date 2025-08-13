@@ -17,16 +17,16 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.RuleTest;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_GRANIT_WITH_WHETSTONE_KEY = registerKey("granit_with_whetstone");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_GRANITE_WITH_WHETSTONE_KEY = registerKey("granite_with_whetstone");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest granitReplaceables = new BlockMatchTest(Blocks.GRANITE);
 
         List<OreConfiguration.TargetBlockState> overworldGranitWithWhetstones = List.of(
-                OreConfiguration.target(granitReplaceables, ModBlocks.GRANIT_WITH_WHETSTONE.get().defaultBlockState())
+                OreConfiguration.target(granitReplaceables, ModBlocks.GRANITE_WITH_WHETSTONE.get().defaultBlockState())
         );
 
-        register(context, OVERWORLD_GRANIT_WITH_WHETSTONE_KEY, Feature.ORE, new OreConfiguration(overworldGranitWithWhetstones, 10));
+        register(context, OVERWORLD_GRANITE_WITH_WHETSTONE_KEY, Feature.ORE, new OreConfiguration(overworldGranitWithWhetstones, 10));
 
     }
 

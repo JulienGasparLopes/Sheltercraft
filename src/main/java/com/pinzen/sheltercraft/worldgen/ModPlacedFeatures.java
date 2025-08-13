@@ -13,12 +13,12 @@ import net.minecraft.world.level.levelgen.placement.*;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> GRANIT_WITH_WHETSTONE_PLACED_KEY = registerKey("granit_with_whetstone_placed");
+    public static final ResourceKey<PlacedFeature> GRANITE_WITH_WHETSTONE_PLACED_KEY = registerKey("granite_with_whetstone_placed");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, GRANIT_WITH_WHETSTONE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_GRANIT_WITH_WHETSTONE_KEY),
+        register(context, GRANITE_WITH_WHETSTONE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_GRANITE_WITH_WHETSTONE_KEY),
                 List.of(
                         CountPlacement.of(256),
                         InSquarePlacement.spread(),
