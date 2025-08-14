@@ -14,9 +14,9 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -39,23 +39,19 @@ public final class Sheltercraft {
     public static final String MOD_ID = "sheltercraft";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final DeferredRegister<Block> REGISTER_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
-    public static final DeferredRegister<Item> REGISTER_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final DeferredRegister<BlockEntityType<?>> REGISTER_BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
     public static final DeferredRegister<MenuType<?>> REGISTER_MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MOD_ID);
 
     public Sheltercraft(FMLJavaModLoadingContext context) {
-        var modBusGroup = context.getModBusGroup();
+        BusGroup modBusGroup = context.getModBusGroup();
 
         FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
 
-        new ModItems();
-        new ModBlocks();
         new ModEvents();
         new ModMenuTypes();
 
-        REGISTER_BLOCKS.register(modBusGroup);
-        REGISTER_ITEMS.register(modBusGroup);
+        ModBlocks.register(modBusGroup);
+        ModItems.register(modBusGroup);
         REGISTER_BLOCK_ENTITIES.register(modBusGroup);
         REGISTER_MENUS.register(modBusGroup);
 

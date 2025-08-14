@@ -1,6 +1,7 @@
 package com.pinzen.sheltercraft.block.custom;
 
 import com.pinzen.sheltercraft.Sheltercraft;
+import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.custom.StrainerBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionHand;
@@ -24,7 +25,7 @@ import java.util.List;
 public class Strainer extends Block implements EntityBlock {
     public Strainer() {
         super(Block.Properties.of()
-                .setId(Sheltercraft.REGISTER_BLOCKS.key("strainer"))
+                .setId(ModBlocks.REGISTER_BLOCKS.key("strainer"))
                 .strength(1.0f)
                 .noOcclusion());
     }

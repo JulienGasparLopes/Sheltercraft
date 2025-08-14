@@ -1,6 +1,6 @@
 package com.pinzen.sheltercraft.block.custom;
 
-import com.pinzen.sheltercraft.Sheltercraft;
+import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.custom.CuttingStumpBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.ItemTags;
@@ -27,7 +27,7 @@ public class CuttingStump extends Block implements EntityBlock {
 
     public CuttingStump() {
         super(Block.Properties.of()
-                .setId(Sheltercraft.REGISTER_BLOCKS.key("cutting_stump"))
+                .setId(ModBlocks.REGISTER_BLOCKS.key("cutting_stump"))
                 .strength(2.0f)
                 .requiresCorrectToolForDrops()
                 .noOcclusion());

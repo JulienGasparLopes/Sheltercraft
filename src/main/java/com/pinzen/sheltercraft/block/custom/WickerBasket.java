@@ -1,6 +1,6 @@
 package com.pinzen.sheltercraft.block.custom;
 
-import com.pinzen.sheltercraft.Sheltercraft;
+import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.custom.WickerBasketBE;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -19,7 +19,7 @@ import org.jetbrains.annotations.Nullable;
 public class WickerBasket extends Block implements EntityBlock {
     public WickerBasket() {
         super(Block.Properties.of()
-                .setId(Sheltercraft.REGISTER_BLOCKS.key("wicker_basket"))
+                .setId(ModBlocks.REGISTER_BLOCKS.key("wicker_basket"))
                 .strength(1.0f)
                 .noOcclusion());
     }
