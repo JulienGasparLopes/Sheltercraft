@@ -35,12 +35,9 @@ public class CuttingStumpRenderer implements BlockEntityRenderer<CuttingStumpBE>
         // pPoseStack.rotateAround(rotation, 0.5f, 0.5f, 0.5f);
 
         pPoseStack.translate(0.5, 0, 0.5);
-
         pPoseStack.scale(3f, 3f, 3f);
 
-
         itemRenderer.renderStatic(stack, ItemDisplayContext.GROUND, pPackedLight, pPackedOverlay, pPoseStack, pBufferSource, pCuttingStumpBE.getLevel(), 0);
-
         pPoseStack.popPose();
     }
 }

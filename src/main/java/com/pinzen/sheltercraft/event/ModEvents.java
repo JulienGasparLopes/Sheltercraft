@@ -48,7 +48,7 @@ public class ModEvents {
                     return;
                 }
 
-                ItemStack customDrop = new ItemStack(ModItems.SHARPENED_FLINT.get());
+                ItemStack customDrop = new ItemStack(ModItems.FLINT_FLAKE.get());
                 ItemEntity drop = new ItemEntity(
                         level,
                         pos.getX() + 0.5,

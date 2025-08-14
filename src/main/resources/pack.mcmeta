@@ -5,14 +5,38 @@
   },
   "filter": {
           "block": [
-              {
-                  "namespace": "minecraft",
-                  "path": "recipe/.*_planks"
-              },
-              {
+            {
                 "namespace": "minecraft",
-                "path": "recipe\\/stick.*"
-              }
+                "path": "recipe/.*_planks"
+            },
+            {
+              "namespace": "minecraft",
+              "path": "recipe\\/stick.*"
+            },
+            {
+              "namespace": "minecraft",
+              "path": "recipe/wooden_axe"
+            },
+            {
+              "namespace": "minecraft",
+              "path": "recipe/wooden_pickaxe"
+            },
+            {
+              "namespace": "minecraft",
+              "path": "recipe/wooden_shovel"
+            },
+            {
+              "namespace": "minecraft",
+              "path": "recipe/stone_axe"
+            },
+            {
+              "namespace": "minecraft",
+              "path": "recipe/stone_pickaxe"
+            },
+            {
+              "namespace": "minecraft",
+              "path": "recipe/stone_shovel"
+            }
           ]
       }
 }

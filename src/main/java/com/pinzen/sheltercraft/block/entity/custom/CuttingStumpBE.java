@@ -143,8 +143,6 @@ public class CuttingStumpBE extends BlockEntity {
 
     @Override
     public AABB getRenderBoundingBox() {
-        // Expand the bounding box to include your rendered item
-        // Example: 2 blocks tall, centered on the block
         return new AABB(worldPosition).inflate(0.5, 0.5, 0.5);
     }
 }

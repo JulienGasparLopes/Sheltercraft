@@ -3,17 +3,22 @@ package com.pinzen.sheltercraft;
 import com.mojang.logging.LogUtils;
 import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.renderer.CuttingStumpRenderer;
+import com.pinzen.sheltercraft.block.entity.renderer.StrainerRenderer;
 import com.pinzen.sheltercraft.event.ModEvents;
+import com.pinzen.sheltercraft.item.custom.ModCreativeModInventory;
 import com.pinzen.sheltercraft.screen.ModMenuTypes;
 import com.pinzen.sheltercraft.screen.custom.WickerBasketScreen;
 import com.pinzen.sheltercraft.item.ModItems;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.eventbus.api.bus.BusGroup;
+import net.minecraftforge.eventbus.api.bus.EventBus;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -29,23 +34,21 @@ public final class Sheltercraft {
     public static final String MOD_ID = "sheltercraft";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final DeferredRegister<Block> REGISTER_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
-    public static final DeferredRegister<Item> REGISTER_ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
     public static final DeferredRegister<BlockEntityType<?>> REGISTER_BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
     public static final DeferredRegister<MenuType<?>> REGISTER_MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MOD_ID);
 
     public Sheltercraft(FMLJavaModLoadingContext context) {
-        var modBusGroup = context.getModBusGroup();
+        BusGroup modBusGroup = context.getModBusGroup();
+        EventBus<FMLCommonSetupEvent> eventBus = FMLCommonSetupEvent.getBus(modBusGroup);
 
-        FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
+        eventBus.addListener(this::commonSetup);
+        ModCreativeModInventory.addListener(modBusGroup);
 
-        new ModItems();
-        new ModBlocks();
         new ModEvents();
         new ModMenuTypes();
 
-        REGISTER_BLOCKS.register(modBusGroup);
-        REGISTER_ITEMS.register(modBusGroup);
+        ModBlocks.register(modBusGroup);
+        ModItems.register(modBusGroup);
         REGISTER_BLOCK_ENTITIES.register(modBusGroup);
         REGISTER_MENUS.register(modBusGroup);
 
@@ -53,7 +56,6 @@ public final class Sheltercraft {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
     }
 
 
@@ -62,6 +64,8 @@ public final class Sheltercraft {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             BlockEntityRenderers.register(ModBlocks.CUTTING_STUMP_BE.get(), CuttingStumpRenderer::new);
+            BlockEntityRenderers.register(ModBlocks.STRAINER_BE.get(), StrainerRenderer::new);
+            ItemBlockRenderTypes.setRenderLayer(ModBlocks.STRAINER.get(), ChunkSectionLayer.CUTOUT);
             MenuScreens.register(ModMenuTypes.WICKER_BASKET_MENU.get(), WickerBasketScreen::new);
         }
     }
