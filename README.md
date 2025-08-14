@@ -73,3 +73,8 @@ Here is a quick list of the next features I plan to add:
 - Still in early design phase
 - Unlock copper tools and maybe bronze tools
 - Make iron a mid-game resource
+
+#### Miscellaneous
+
+- Remove experimental feature warning or use a different world generation
+- Add mod configuration
