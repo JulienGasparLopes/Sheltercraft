@@ -5,6 +5,7 @@ import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.renderer.CuttingStumpRenderer;
 import com.pinzen.sheltercraft.block.entity.renderer.StrainerRenderer;
 import com.pinzen.sheltercraft.event.ModEvents;
+import com.pinzen.sheltercraft.item.custom.ModCreativeModInventory;
 import com.pinzen.sheltercraft.screen.ModMenuTypes;
 import com.pinzen.sheltercraft.screen.custom.WickerBasketScreen;
 import com.pinzen.sheltercraft.item.ModItems;
@@ -13,10 +14,11 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.inventory.MenuType;
-import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
+import net.minecraftforge.eventbus.api.bus.EventBus;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -37,8 +39,10 @@ public final class Sheltercraft {
 
     public Sheltercraft(FMLJavaModLoadingContext context) {
         BusGroup modBusGroup = context.getModBusGroup();
+        EventBus<FMLCommonSetupEvent> eventBus = FMLCommonSetupEvent.getBus(modBusGroup);
 
-        FMLCommonSetupEvent.getBus(modBusGroup).addListener(this::commonSetup);
+        eventBus.addListener(this::commonSetup);
+        ModCreativeModInventory.addListener(modBusGroup);
 
         new ModEvents();
         new ModMenuTypes();
@@ -52,7 +56,6 @@ public final class Sheltercraft {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
     }
 
 
