@@ -16,8 +16,14 @@
 
     "item.sheltercraft.plant_fiber": "Plant Fiber",
     "item.sheltercraft.wicker": "Wicker",
+    "item.sheltercraft.whetstone": "Whetstone",
 
     "block.sheltercraft.cutting_stump": "Cutting Stump",
+    "item.sheltercraft.cutting_stump": "Cutting Stump",
     "block.sheltercraft.strainer": "Strainer",
-    "block.sheltercraft.granite_with_whetstone": "Granite with Whetstone"
+    "item.sheltercraft.strainer": "Strainer",
+    "block.sheltercraft.granite_with_whetstone": "Granite with Whetstone",
+    "item.sheltercraft.granite_with_whetstone": "Granite with Whetstone",
+    "block.sheltercraft.wicker_basket": "Wicker Basket",
+    "item.sheltercraft.wicker_basket": "Wicker Basket"
 }
