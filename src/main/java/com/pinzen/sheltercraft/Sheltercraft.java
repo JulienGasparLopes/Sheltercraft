@@ -27,13 +27,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
-/**
- * TODO:
- * - Disable wooden and stone tools crafting
- * - Add recipes for items variants of blocks
- * - Rename to NaturalWhetstone ?
- */
-
 @Mod(Sheltercraft.MOD_ID)
 public final class Sheltercraft {
     public static final String MOD_ID = "sheltercraft";
