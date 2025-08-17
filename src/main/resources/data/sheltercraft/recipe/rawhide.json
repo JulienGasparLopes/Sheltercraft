@@ -1,0 +1,7 @@
+{
+  "type": "sheltercraft:tool_durability",
+  "ingredient": "sheltercraft:animal_skin",
+  "tool": "#sheltercraft:trapper_knifes",
+  "result": { "id": "sheltercraft:rawhide", "count": 2 },
+  "damage": 2
+}

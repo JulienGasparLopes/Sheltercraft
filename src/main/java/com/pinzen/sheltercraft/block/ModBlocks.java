@@ -1,12 +1,8 @@
 package com.pinzen.sheltercraft.block;
 
 import com.pinzen.sheltercraft.Sheltercraft;
-import com.pinzen.sheltercraft.block.custom.CuttingStump;
-import com.pinzen.sheltercraft.block.custom.Strainer;
-import com.pinzen.sheltercraft.block.entity.custom.CuttingStumpBE;
-import com.pinzen.sheltercraft.block.custom.WickerBasket;
-import com.pinzen.sheltercraft.block.entity.custom.StrainerBE;
-import com.pinzen.sheltercraft.block.entity.custom.WickerBasketBE;
+import com.pinzen.sheltercraft.block.custom.*;
+import com.pinzen.sheltercraft.block.entity.custom.*;
 import com.pinzen.sheltercraft.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -22,7 +18,17 @@ import java.util.Set;
 public class ModBlocks {
     public static final DeferredRegister<Block> REGISTER_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, Sheltercraft.MOD_ID);
 
+    // Simple Blocks
+    public static final RegistryObject<Block> GRANITE_WITH_WHETSTONE = REGISTER_BLOCKS.register("granite_with_whetstone", () -> new Block(
+            Block.Properties.of()
+                    .setId(REGISTER_BLOCKS.key("granite_with_whetstone"))
+                    .strength(3.0f)
+                    .requiresCorrectToolForDrops()
+    ));
+    public static final RegistryObject<Item> GRANITE_WITH_WHETSTONE_ITEM = ModItems.REGISTER_ITEMS.register("granite_with_whetstone",
+            () -> new BlockItem(ModBlocks.GRANITE_WITH_WHETSTONE.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("granite_with_whetstone"))));
 
+    // Blocks with Block Entities
     public static final RegistryObject<Block> CUTTING_STUMP = REGISTER_BLOCKS.register("cutting_stump", CuttingStump::new);
     public static final RegistryObject<Item> CUTTING_STUMP_ITEM = ModItems.REGISTER_ITEMS.register("cutting_stump",
             () -> new BlockItem(ModBlocks.CUTTING_STUMP.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("cutting_stump"))));
@@ -56,14 +62,27 @@ public class ModBlocks {
                     Set.of(STRAINER.get())
             ));
 
-    public static final RegistryObject<Block> GRANITE_WITH_WHETSTONE = REGISTER_BLOCKS.register("granite_with_whetstone", () -> new Block(
-            Block.Properties.of()
-                    .setId(REGISTER_BLOCKS.key("granite_with_whetstone"))
-                    .strength(3.0f)
-                    .requiresCorrectToolForDrops()
-    ));
-    public static final RegistryObject<Item> GRANITE_WITH_WHETSTONE_ITEM = ModItems.REGISTER_ITEMS.register("granite_with_whetstone",
-            () -> new BlockItem(ModBlocks.GRANITE_WITH_WHETSTONE.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("granite_with_whetstone"))));
+    public static final RegistryObject<Block> WOODEN_TUB = REGISTER_BLOCKS.register("wooden_tub", WoodenTub::new);
+    public static final RegistryObject<Item> WOODEN_TUB_ITEM = ModItems.REGISTER_ITEMS.register("wooden_tub",
+            () -> new BlockItem(ModBlocks.WOODEN_TUB.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("wooden_tub"))));
+
+    public static final RegistryObject<BlockEntityType<WoodenTubBE>> WOODEN_TUB_BE = Sheltercraft.REGISTER_BLOCK_ENTITIES.register(
+            "wooden_tub_be",
+            () -> new BlockEntityType<>(
+                    WoodenTubBE::new,
+                    Set.of(WOODEN_TUB.get())
+            ));
+
+    public static final RegistryObject<Block> DRYING_RACK = REGISTER_BLOCKS.register("drying_rack", DryingRack::new);
+    public static final RegistryObject<Item> DRYING_RACK_ITEM = ModItems.REGISTER_ITEMS.register("drying_rack",
+            () -> new BlockItem(ModBlocks.DRYING_RACK.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("drying_rack"))));
+
+    public static final RegistryObject<BlockEntityType<DryingRackBE>> DRYING_RACK_BE = Sheltercraft.REGISTER_BLOCK_ENTITIES.register(
+            "drying_rack_be",
+            () -> new BlockEntityType<>(
+                    DryingRackBE::new,
+                    Set.of(DRYING_RACK.get())
+            ));
 
     public static void register(BusGroup busGroup) {
         REGISTER_BLOCKS.register(busGroup);

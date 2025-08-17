@@ -1,6 +1,5 @@
 package com.pinzen.sheltercraft.block.custom;
 
-import com.pinzen.sheltercraft.Sheltercraft;
 import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.custom.StrainerBE;
 import net.minecraft.core.BlockPos;
@@ -44,7 +43,6 @@ public class Strainer extends Block implements EntityBlock {
     protected InteractionResult useItemOn(
             ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult
     ) {
-        Sheltercraft.LOGGER.warn("jkj used WITH item");
         BlockEntity be = pLevel.getBlockEntity(pPos);
         ItemStack heldItem = pPlayer.getMainHandItem();
         if (be instanceof StrainerBE strainerBE) {

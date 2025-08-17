@@ -5,6 +5,7 @@ import com.pinzen.sheltercraft.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -30,8 +31,6 @@ public class ModEvents {
         BlockState state = level.getBlockState(pos);
         ItemStack heldItem = event.getItemStack();
         InteractionHand hand = event.getHand();
-
-        if (level.isClientSide()) return;
 
         if (heldItem.is(net.minecraft.world.item.Items.FLINT)) {
             if (player.getCooldowns().isOnCooldown(heldItem)) {
@@ -63,6 +62,20 @@ public class ModEvents {
 
                 event.setCancellationResult(InteractionResult.SUCCESS);
             }
+        }
+        if( heldItem.is(ItemTags.AXES) && state.is(BlockTags.OVERWORLD_NATURAL_LOGS) && !player.getCooldowns().isOnCooldown(heldItem)) {
+            player.swing(hand, true);
+            // player.getCooldowns().addCooldown(heldItem, 10);
+
+            ItemStack barkItemStack = new ItemStack(ModItems.WOOD_BARK.get());
+            ItemEntity drop = new ItemEntity(
+                    level,
+                    pos.getX() + 0.5,
+                    pos.getY() + 0.5,
+                    pos.getZ() + 0.5,
+                    barkItemStack
+            );
+            level.addFreshEntity(drop);
         }
     }
 

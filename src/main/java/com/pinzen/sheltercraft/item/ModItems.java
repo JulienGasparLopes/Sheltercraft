@@ -1,6 +1,7 @@
 package com.pinzen.sheltercraft.item;
 
 import com.pinzen.sheltercraft.Sheltercraft;
+import com.pinzen.sheltercraft.item.custom.TrapperKnife;
 import com.pinzen.sheltercraft.item.custom.Whetstone;
 import com.pinzen.sheltercraft.util.Helpers;
 import com.pinzen.sheltercraft.item.custom.Sickle;
@@ -50,6 +51,13 @@ public class ModItems {
                     new Item.Properties().setId(Helpers.resKeyItem("flint_shovel"))
             )
     );
+    public static final RegistryObject<Item> FLINT_TRAPPER_KNIFE = REGISTER_ITEMS.register(
+            "flint_trapper_knife",
+            () -> new TrapperKnife(
+                    ModToolTiers.FLINT_TIER,
+                    new Item.Properties().setId(Helpers.resKeyItem("flint_trapper_knife"))
+            )
+    );
 
     public static final RegistryObject<Item> SHARPENED_FLINT_SICKLE = REGISTER_ITEMS.register(
             "sharpened_flint_sickle",
@@ -61,14 +69,14 @@ public class ModItems {
     public static final RegistryObject<Item> SHARPENED_FLINT_HATCHET = REGISTER_ITEMS.register(
             "sharpened_flint_hatchet",
             () -> new AxeItem(
-                    ModToolTiers.SHARPENED_FLINT_TIER, 1.5f, 	-2.2f,
+                    ModToolTiers.SHARPENED_FLINT_TIER, 1f, 	-3.2f,
                     new Item.Properties().setId(Helpers.resKeyItem("sharpened_flint_hatchet"))
             )
     );
     public static final RegistryObject<Item> SHARPENED_FLINT_AXE = REGISTER_ITEMS.register(
             "sharpened_flint_axe",
             () -> new AxeItem(
-                    ModToolTiers.SHARPENED_FLINT_TIER, 5f, 	-2.2f,
+                    ModToolTiers.SHARPENED_FLINT_TIER, 3f, 	-3.2f,
                     new Item.Properties().setId(Helpers.resKeyItem("sharpened_flint_axe"))
             )
     );
@@ -76,15 +84,22 @@ public class ModItems {
             "sharpened_flint_pickaxe",
             () -> new Item(
                     new Item.Properties()
-                            .pickaxe(ModToolTiers.SHARPENED_FLINT_TIER, 1.5f, -1.8f)
+                            .pickaxe(ModToolTiers.SHARPENED_FLINT_TIER, 1f, -2.8f)
                             .setId(Helpers.resKeyItem("sharpened_flint_pickaxe"))
             )
     );
     public static final RegistryObject<Item> SHARPENED_FLINT_SHOVEL = REGISTER_ITEMS.register(
             "sharpened_flint_shovel",
             () -> new ShovelItem(
-                    ModToolTiers.SHARPENED_FLINT_TIER, 2f, 	-2.0f,
+                    ModToolTiers.SHARPENED_FLINT_TIER, 1.5f, 	-3.0f,
                     new Item.Properties().setId(Helpers.resKeyItem("sharpened_flint_shovel"))
+            )
+    );
+    public static final RegistryObject<Item> SHARPENED_FLINT_TRAPPER_KNIFE = REGISTER_ITEMS.register(
+            "sharpened_flint_trapper_knife",
+            () -> new TrapperKnife(
+                    ModToolTiers.FLINT_TIER,
+                    new Item.Properties().setId(Helpers.resKeyItem("sharpened_flint_trapper_knife"))
             )
     );
 
@@ -108,6 +123,36 @@ public class ModItems {
     public static final RegistryObject<Item> WICKER = REGISTER_ITEMS.register(
             "wicker",
             () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("wicker")))
+    );
+
+    public static final RegistryObject<Item> ANIMAL_SKIN = REGISTER_ITEMS.register(
+            "animal_skin",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("animal_skin")))
+    );
+    public static final RegistryObject<Item> RAWHIDE = REGISTER_ITEMS.register(
+            "rawhide",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("rawhide")))
+    );
+    public static final RegistryObject<Item> CURED_HIDE = REGISTER_ITEMS.register(
+            "cured_hide",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("cured_hide")))
+    );
+    public static final RegistryObject<Item> SOAKED_HIDE = REGISTER_ITEMS.register(
+            "soaked_hide",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("soaked_hide")))
+    );
+    public static final RegistryObject<Item> TANNED_HIDE = REGISTER_ITEMS.register(
+            "tanned_hide",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("tanned_hide")))
+    );
+
+    public static final RegistryObject<Item> SALT = REGISTER_ITEMS.register(
+            "salt",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("salt")))
+    );
+    public static final RegistryObject<Item> WOOD_BARK = REGISTER_ITEMS.register(
+            "wood_bark",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("wood_bark")))
     );
 
     public static void register(BusGroup busGroup) {
