@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -64,7 +65,17 @@ public class WoodenTub extends BaseEntityBlock {
 
     @Override
     public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        return super.getDrops(state, builder);
+        List<ItemStack> drops = super.getDrops(state, builder);
+
+        BlockEntity be = builder.getOptionalParameter(LootContextParams.BLOCK_ENTITY);
+        if (be instanceof WoodenTubBE woodenTubBE) {
+            ItemStack stored = woodenTubBE.getProcessingItem();
+            if (!stored.isEmpty()) {
+                drops.add(stored.copy());
+            }
+        }
+
+        return drops;
     }
 
     @Override
