@@ -25,10 +25,16 @@ World generation uses experimental features. Do not be afraid of the "Game creat
 - Sharpening FlintFlakes with a Whetstone to craft SharpenedFlints (and relative tools)
 - Granite deposits contains blocks with Whetstones to gather more of them. Requires SharpenedFlint pickaxe or better.
 - Wooden and Stone tools are disabled.
+- Animals drop AnimalSkin that must be processed into Rawhide using a TrapperKnife
+- Salt Rawhide, Soak it, Tan it (using WoodenTub + Water + WoodBark), Dry it (using DryingRack) to obtain Leather
+- WoodenTub and DryingRack has long processing times (6 and 3 minutes respectively)
+
+WARNING: Salt is temporarily impossible to gather.
 
 ![features.png](features.png)
 
-TODO: More screenshots ! (strainer, sharpened tools, granite with whetstone)
+TODO: Sharpened Flint features screenshots (strainer, sharpened tools, granite with whetstone)
+TODO: Leather working screenshots (rawhide, leather, wooden tub, drying rack, trapper knife)
 
 ## License
 
@@ -48,18 +54,16 @@ Here is a quick list of the next features I plan to add:
 
 - Add a basic advancement page to help using mod in standalone mode
 
-#### Leather Working
+#### Leather Working - Improvements
 
-- Retrieve rawhide from animals
-- Craft rawhide into leather (salt+walter, drying, tan+water, drying, beating)
-- New tools and machines: RawhideKnife, LeatherWorkerHammer, TanningTub, DryingRack
+- LeatherWorkerHammer (one more step to leather)
 - For IronAge: wooden tanningTub to have 4 rawhide at same time (4x less water and faster)
 - For mod integration: possibility to automate using create Press + WindTurbine
 
 #### Pottery
 
-- Still in early design phase
-- May be needed for leather working (early tanning tub)
+- Add a pottery kiln (Sevrier's Kiln) to bake clay pots
+- ClayBasin to evaporate water (for salt production), and early leather tanning
 
 #### Cooking and Food balancing
 

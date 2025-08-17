@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "sheltercraft:salt",
+    "sheltercraft:rawhide"
+  ],
+  "result": {
+    "count": 1,
+    "id": "sheltercraft:cured_hide"
+  }
+}

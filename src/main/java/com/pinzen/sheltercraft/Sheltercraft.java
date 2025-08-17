@@ -3,9 +3,12 @@ package com.pinzen.sheltercraft;
 import com.mojang.logging.LogUtils;
 import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.renderer.CuttingStumpRenderer;
+import com.pinzen.sheltercraft.block.entity.renderer.DryingRackRenderer;
 import com.pinzen.sheltercraft.block.entity.renderer.StrainerRenderer;
+import com.pinzen.sheltercraft.block.entity.renderer.WoodenTubRenderer;
 import com.pinzen.sheltercraft.event.ModEvents;
-import com.pinzen.sheltercraft.item.custom.ModCreativeModInventory;
+import com.pinzen.sheltercraft.item.ModCreativeModInventory;
+import com.pinzen.sheltercraft.recipe.ModRecipes;
 import com.pinzen.sheltercraft.screen.ModMenuTypes;
 import com.pinzen.sheltercraft.screen.custom.WickerBasketScreen;
 import com.pinzen.sheltercraft.item.ModItems;
@@ -16,7 +19,6 @@ import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.eventbus.api.bus.EventBus;
 import net.minecraftforge.eventbus.api.listener.SubscribeEvent;
@@ -49,6 +51,7 @@ public final class Sheltercraft {
 
         ModBlocks.register(modBusGroup);
         ModItems.register(modBusGroup);
+        ModRecipes.register(modBusGroup);
         REGISTER_BLOCK_ENTITIES.register(modBusGroup);
         REGISTER_MENUS.register(modBusGroup);
 
@@ -65,6 +68,8 @@ public final class Sheltercraft {
         public static void onClientSetup(FMLClientSetupEvent event) {
             BlockEntityRenderers.register(ModBlocks.CUTTING_STUMP_BE.get(), CuttingStumpRenderer::new);
             BlockEntityRenderers.register(ModBlocks.STRAINER_BE.get(), StrainerRenderer::new);
+            BlockEntityRenderers.register(ModBlocks.WOODEN_TUB_BE.get(), WoodenTubRenderer::new);
+            BlockEntityRenderers.register(ModBlocks.DRYING_RACK_BE.get(), DryingRackRenderer::new);
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.STRAINER.get(), ChunkSectionLayer.CUTOUT);
             MenuScreens.register(ModMenuTypes.WICKER_BASKET_MENU.get(), WickerBasketScreen::new);
         }

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PPP",
+    "PSP",
+    "P P"
+  ],
+  "key": {
+    "P": "minecraft:stick",
+    "S": "minecraft:string"
+  },
+  "result": {
+    "id": "sheltercraft:drying_rack"
+  }
+}

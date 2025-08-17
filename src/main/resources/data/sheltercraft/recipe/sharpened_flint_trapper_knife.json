@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "mirrored": true,
+  "pattern": [
+    " F",
+    "S "
+  ],
+  "key": {
+    "F":  "sheltercraft:sharpened_flint",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "id": "sheltercraft:sharpened_flint_trapper_knife"
+  }
+}
