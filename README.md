@@ -28,13 +28,14 @@ World generation uses experimental features. Do not be afraid of the "Game creat
 - Animals drop AnimalSkin that must be processed into Rawhide using a TrapperKnife
 - Salt Rawhide, Soak it, Tan it (using WoodenTub + Water + WoodBark), Dry it (using DryingRack) to obtain Leather
 - WoodenTub and DryingRack has long processing times (6 and 3 minutes respectively)
-
-WARNING: Salt is temporarily impossible to gather.
+- PotteryKiln to fire clay pots.
+- ClayTub for early salt production (evaporation) + early leather tanning
 
 ![features.png](features.png)
 
 TODO: Sharpened Flint features screenshots (strainer, sharpened tools, granite with whetstone)
 TODO: Leather working screenshots (rawhide, leather, wooden tub, drying rack, trapper knife)
+TODO: Pottery features screenshots
 
 ## License
 
@@ -60,10 +61,6 @@ Here is a quick list of the next features I plan to add:
 - For IronAge: wooden tanningTub to have 4 rawhide at same time (4x less water and faster)
 - For mod integration: possibility to automate using create Press + WindTurbine
 
-#### Pottery
-
-- Add a pottery kiln (Sevrier's Kiln) to bake clay pots
-- ClayBasin to evaporate water (for salt production), and early leather tanning
 
 #### Cooking and Food balancing
 
