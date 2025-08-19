@@ -34,7 +34,9 @@ World generation uses experimental features. Do not be afraid of the "Game creat
 ![features.png](features.png)
 
 TODO: Sharpened Flint features screenshots (strainer, sharpened tools, granite with whetstone)
+
 TODO: Leather working screenshots (rawhide, leather, wooden tub, drying rack, trapper knife)
+
 TODO: Pottery features screenshots
 
 ## License
