@@ -73,6 +73,28 @@ public class ModBlocks {
                     Set.of(WOODEN_TUB.get())
             ));
 
+    public static final RegistryObject<Block> CLAY_TUB = REGISTER_BLOCKS.register("clay_tub", ClayTub::new);
+    public static final RegistryObject<Item> CLAY_TUB_ITEM = ModItems.REGISTER_ITEMS.register("clay_tub",
+            () -> new BlockItem(ModBlocks.CLAY_TUB.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("clay_tub"))));
+
+    public static final RegistryObject<BlockEntityType<ClayTubBE>> CLAY_TUB_BE = Sheltercraft.REGISTER_BLOCK_ENTITIES.register(
+            "clay_tub_be",
+            () -> new BlockEntityType<>(
+                    ClayTubBE::new,
+                    Set.of(CLAY_TUB.get())
+            ));
+
+    public static final RegistryObject<Block> POTTERY_KILN = REGISTER_BLOCKS.register("pottery_kiln", PotteryKiln::new);
+    public static final RegistryObject<Item> POTTERY_KILN_ITEM = ModItems.REGISTER_ITEMS.register("pottery_kiln",
+            () -> new BlockItem(ModBlocks.POTTERY_KILN.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("pottery_kiln"))));
+
+    public static final RegistryObject<BlockEntityType<PotteryKilnBE>> POTTERY_KILN_BE = Sheltercraft.REGISTER_BLOCK_ENTITIES.register(
+            "pottery_kiln_be",
+            () -> new BlockEntityType<>(
+                    PotteryKilnBE::new,
+                    Set.of(POTTERY_KILN.get())
+            ));
+
     public static final RegistryObject<Block> DRYING_RACK = REGISTER_BLOCKS.register("drying_rack", DryingRack::new);
     public static final RegistryObject<Item> DRYING_RACK_ITEM = ModItems.REGISTER_ITEMS.register("drying_rack",
             () -> new BlockItem(ModBlocks.DRYING_RACK.get(), new Item.Properties().setId(ModItems.REGISTER_ITEMS.key("drying_rack"))));

@@ -155,6 +155,11 @@ public class ModItems {
             () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("wood_bark")))
     );
 
+    public static final RegistryObject<Item> UNFIRED_CLAY_TUB = REGISTER_ITEMS.register(
+            "unfired_clay_tub",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("unfired_clay_tub")))
+    );
+
     public static void register(BusGroup busGroup) {
         REGISTER_ITEMS.register(busGroup);
     }

@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "sheltercraft:granite_with_whetstone"
+    "sheltercraft:granite_with_whetstone",
+    "sheltercraft:clay_tub",
+    "sheltercraft:pottery_kiln"
   ]
 }

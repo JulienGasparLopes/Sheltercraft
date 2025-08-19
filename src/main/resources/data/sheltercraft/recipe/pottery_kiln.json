@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "mirrored": true,
+  "pattern": [
+    " C ",
+    "BBB",
+    "B B"
+  ],
+  "key": {
+    "C":  "minecraft:clay_ball",
+    "B": "minecraft:clay"
+  },
+  "result": {
+    "id": "sheltercraft:pottery_kiln"
+  }
+}

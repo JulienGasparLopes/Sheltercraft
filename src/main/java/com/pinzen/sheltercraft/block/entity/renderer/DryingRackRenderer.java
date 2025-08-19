@@ -30,8 +30,8 @@ public class DryingRackRenderer implements BlockEntityRenderer<DryingRackBE> {
         for (ItemStack itemStack : dryingItems) {
             if (!itemStack.isEmpty()) {
                 pPoseStack.pushPose();
-                Quaternionfc rotation = new Quaternionf().rotateX((float) Math.toRadians(27.5f - 55f * i));
                 pPoseStack.translate(0.5, 0.25, 0.18 + 0.55 * i);
+                Quaternionfc rotation = new Quaternionf().rotateX((float) Math.toRadians(27.5f - 55f * i));
                 pPoseStack.rotateAround(rotation, 0f, 0f, 0f);
                 pPoseStack.scale(1.8f, 1.8f, 1.8f);
 

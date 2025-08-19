@@ -30,12 +30,15 @@ public class ModCreativeModInventory {
         else if (event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.WICKER_BASKET);
             event.accept(ModBlocks.CUTTING_STUMP);
+            event.accept(ModBlocks.POTTERY_KILN);
+            event.accept(ModBlocks.CLAY_TUB);
             event.accept(ModBlocks.STRAINER);
-            event.accept(ModBlocks.WOODEN_TUB);
             event.accept(ModBlocks.DRYING_RACK);
+            // event.accept(ModBlocks.WOODEN_TUB); // Not used for now
         }
         else if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.FLINT_FLAKE);
+            event.accept(ModItems.SHARPENED_FLINT);
             event.accept(ModItems.PLANT_FIBER);
             event.accept(ModItems.WICKER);
             event.accept(ModItems.WHETSTONE);
@@ -48,6 +51,8 @@ public class ModCreativeModInventory {
 
             event.accept(ModItems.SALT);
             event.accept(ModItems.WOOD_BARK);
+
+            event.accept(ModItems.UNFIRED_CLAY_TUB);
         }
     }
 

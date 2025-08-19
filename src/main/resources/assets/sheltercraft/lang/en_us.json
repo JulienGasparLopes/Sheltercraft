@@ -29,6 +29,8 @@
   "item.sheltercraft.salt": "Salt",
   "item.sheltercraft.wood_bark": "Wood Bark",
 
+  "item.sheltercraft.unfired_clay_tub": "Unfired Clay Tub",
+
   "block.sheltercraft.cutting_stump": "Cutting Stump",
   "item.sheltercraft.cutting_stump": "Cutting Stump",
   "block.sheltercraft.strainer": "Strainer",
@@ -40,5 +42,9 @@
   "block.sheltercraft.wooden_tub": "Wooden Tub",
   "item.sheltercraft.wooden_tub": "Wooden Tub",
   "block.sheltercraft.drying_rack": "Drying Rack",
-  "item.sheltercraft.drying_rack": "Drying Rack"
+  "item.sheltercraft.drying_rack": "Drying Rack",
+  "block.sheltercraft.pottery_kiln": "Pottery Kiln",
+  "item.sheltercraft.pottery_kiln": "Pottery Kiln",
+  "block.sheltercraft.clay_tub": "Clay Tub",
+  "item.sheltercraft.clay_tub": "Clay Tub"
 }

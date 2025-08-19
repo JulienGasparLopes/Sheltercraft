@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
-    "sheltercraft:cutting_stump"
+    "sheltercraft:cutting_stump",
+    "sheltercraft:drying_rack",
+    "sheltercraft:strainer"
   ]
 }
