@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/craft_flint_sickle",
+  "criteria": {
+    "get_plant_fiber": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:plant_fiber"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_plant_fiber.description"
+    },
+    "icon": {
+      "id": "sheltercraft:plant_fiber"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_plant_fiber.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:wicker"
+    ]
+  },
+  "sends_telemetry_event": true
+}

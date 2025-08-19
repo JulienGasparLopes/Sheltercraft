@@ -15,6 +15,8 @@ World generation uses experimental features. Do not be afraid of the "Game creat
 
 ## Features
 
+Sheltercraft comes with an __in-game advancement page__ that fully describes all available features ! 
+
 - __Flint chipping__ (right click on top of a stone block) and early-game flint tools using FlintFlakes.
 - Gathering logs now requires an axe (Flint Hatchet before log harvesting)/
 - Sticks may be gathered from leaves.
@@ -53,22 +55,13 @@ This mod is developed in order to be integrated into a modpack I'll be working o
 
 Here is a quick list of the next features I plan to add:
 
-#### User Journey Guide
-
-- Add a basic advancement page to help using mod in standalone mode
 
 #### Miscellaneous
 
-- Add mod configuration
 - Blocks orientation : allow to place PotteryKiln and DryingRack in different orientations
+- Add mod configuration
 - Fix all sounds and animations
 - Remove experimental feature warning or use a different world generation
-
-#### Leather Working - Improvements
-
-- LeatherWorkerHammer (one more step to leather)
-- For IronAge: wooden tanningTub to have 4 rawhide at same time (4x less water and faster)
-- For mod integration: possibility to automate using create Press + WindTurbine
 
 #### Pottery - Improvements
 
@@ -80,6 +73,12 @@ Here is a quick list of the next features I plan to add:
 - Make early food sources scarcer
 - Make cooking more important (bonuses ? Meals to stack bonuses ?)
 - Do not make it too complex (e.g. no food decay)
+
+#### Leather Working - Improvements
+
+- LeatherWorkerHammer (one more step to leather)
+- For IronAge: wooden tanningTub to have 4 rawhide at same time (4x less water and faster)
+- For mod integration: possibility to automate using create Press + WindTurbine
 
 #### Copper and Bronze Age
 

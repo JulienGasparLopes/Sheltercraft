@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/craft_strainer",
+  "criteria": {
+    "get_whetstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:strainer"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_whetstone.description"
+    },
+    "icon": {
+      "id": "sheltercraft:whetstone"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_whetstone.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:sharpened_flint"
+    ]
+  },
+  "sends_telemetry_event": true
+}

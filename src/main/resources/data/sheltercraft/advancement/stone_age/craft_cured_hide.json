@@ -1,0 +1,28 @@
+{
+  "parent": "sheltercraft:stone_age/get_salt",
+  "criteria": {
+    "craft_cured_hide": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:cured_hide"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.craft_cured_hide.description"
+    },
+    "icon": {
+      "id": "sheltercraft:cured_hide"
+    },
+    "title": {
+      "translate": "advancement.stone_age.craft_cured_hide.title"
+    }
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,28 @@
+{
+  "parent": "sheltercraft:stone_age/craft_crafting_table",
+  "criteria": {
+    "craft_trapper_knife": {
+      "conditions": {
+        "items": [
+          {
+            "tag": "sheltercraft:item/trapper_knife"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.craft_trapper_knife.description"
+    },
+    "icon": {
+      "id": "sheltercraft:flint_trapper_knife"
+    },
+    "title": {
+      "translate": "advancement.stone_age.craft_trapper_knife.title"
+    }
+  },
+  "sends_telemetry_event": true
+}

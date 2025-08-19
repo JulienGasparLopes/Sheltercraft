@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/craft_trapper_knife",
+  "criteria": {
+    "get_animal_skin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:animal_skin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_animal_skin.description"
+    },
+    "icon": {
+      "id": "sheltercraft:animal_skin"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_animal_skin.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:rawhide"
+    ]
+  },
+  "sends_telemetry_event": true
+}

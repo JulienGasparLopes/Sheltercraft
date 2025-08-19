@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/root",
+  "criteria": {
+    "get_flint_flake": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:flint_flake"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_flint_flake.description"
+    },
+    "icon": {
+      "id": "sheltercraft:flint_flake"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_flint_flake.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:flint_hatchet"
+    ]
+  },
+  "sends_telemetry_event": true
+}

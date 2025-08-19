@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/get_flint_flake",
+  "criteria": {
+    "craft_flint_hatchet": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:flint_hatchet"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.craft_flint_hatchet.description"
+    },
+    "icon": {
+      "id": "sheltercraft:flint_hatchet"
+    },
+    "title": {
+      "translate": "advancement.stone_age.craft_flint_hatchet.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:cutting_stump"
+    ]
+  },
+  "sends_telemetry_event": true
+}

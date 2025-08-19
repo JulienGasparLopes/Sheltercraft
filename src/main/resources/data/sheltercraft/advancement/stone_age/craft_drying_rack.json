@@ -1,0 +1,28 @@
+{
+  "parent": "sheltercraft:stone_age/craft_tanned_hide",
+  "criteria": {
+    "craft_drying_rack": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:drying_rack"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.craft_drying_rack.description"
+    },
+    "icon": {
+      "id": "sheltercraft:drying_rack"
+    },
+    "title": {
+      "translate": "advancement.stone_age.craft_drying_rack.title"
+    }
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/fire_clay_tub",
+  "criteria": {
+    "get_salt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:salt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_salt.description"
+    },
+    "icon": {
+      "id": "sheltercraft:salt"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_salt.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:cured_hide"
+    ]
+  },
+  "sends_telemetry_event": true
+}

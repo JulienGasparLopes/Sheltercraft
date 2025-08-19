@@ -1,0 +1,28 @@
+{
+  "parent": "sheltercraft:stone_age/get_animal_skin",
+  "criteria": {
+    "get_rawhide": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:rawhide"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_rawhide.description"
+    },
+    "icon": {
+      "id": "sheltercraft:rawhide"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_rawhide.title"
+    }
+  },
+  "sends_telemetry_event": true
+}

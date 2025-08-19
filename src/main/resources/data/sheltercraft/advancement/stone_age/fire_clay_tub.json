@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/craft_pottery_kiln",
+  "criteria": {
+    "fire_clay_tub": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:clay_tub"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.fire_clay_tub.description"
+    },
+    "icon": {
+      "id": "sheltercraft:clay_tub"
+    },
+    "title": {
+      "translate": "advancement.stone_age.fire_clay_tub.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:salt"
+    ]
+  },
+  "sends_telemetry_event": true
+}

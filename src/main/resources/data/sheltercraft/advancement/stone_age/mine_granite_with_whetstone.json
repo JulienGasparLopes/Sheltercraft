@@ -1,0 +1,31 @@
+{
+  "parent": "sheltercraft:stone_age/get_sharpened_flint",
+  "criteria": {
+    "mine_granite_with_whetstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:granite_with_whetstone",
+            "count": {
+              "min": 32
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.mine_granite_with_whetstone.description"
+    },
+    "icon": {
+      "id": "sheltercraft:granite_with_whetstone"
+    },
+    "title": {
+      "translate": "advancement.stone_age.mine_granite_with_whetstone.title"
+    }
+  },
+  "sends_telemetry_event": true
+}

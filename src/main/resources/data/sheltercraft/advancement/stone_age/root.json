@@ -1,0 +1,22 @@
+{
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:gui/advancements/backgrounds/stone",
+    "description": {
+      "translate": "advancement.stone_age.root.description"
+    },
+    "icon": {
+      "id": "minecraft:flint"
+    },
+    "title": {
+      "translate": "advancement.stone_age.root.title"
+    },
+    "show_toast": true
+  },
+  "criteria": {
+    "tick": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,37 @@
+{
+  "parent": "sheltercraft:stone_age/craft_cutting_stump",
+  "criteria": {
+    "craft_crafting_table": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:crafting_table"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.craft_crafting_table.description"
+    },
+    "icon": {
+      "id": "minecraft:crafting_table"
+    },
+    "title": {
+      "translate": "advancement.stone_age.craft_crafting_table.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:pottery_kiln",
+      "sheltercraft:flint_axe",
+      "sheltercraft:flint_pickaxe",
+      "sheltercraft:flint_shovel",
+      "sheltercraft:flint_sickle"
+    ]
+  },
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,28 @@
+{
+  "parent": "sheltercraft:stone_age/craft_drying_rack",
+  "criteria": {
+    "get_leather": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:leather"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_leather.description"
+    },
+    "icon": {
+      "id": "minecraft:leather"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_leather.title"
+    }
+  },
+  "sends_telemetry_event": true
+}

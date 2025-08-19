@@ -1,0 +1,37 @@
+{
+  "parent": "sheltercraft:stone_age/get_whetstone",
+  "criteria": {
+    "get_sharpened_flint": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:sharpened_flint"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.get_sharpened_flint.description"
+    },
+    "icon": {
+      "id": "sheltercraft:sharpened_flint"
+    },
+    "title": {
+      "translate": "advancement.stone_age.get_sharpened_flint.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:sharpened_flint_axe",
+      "sheltercraft:sharpened_flint_hatchet",
+      "sheltercraft:sharpened_flint_pickaxe",
+      "sheltercraft:sharpened_flint_shovel",
+      "sheltercraft:sharpened_flint_sickle"
+    ]
+  },
+  "sends_telemetry_event": true
+}

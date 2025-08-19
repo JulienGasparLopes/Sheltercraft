@@ -1,0 +1,33 @@
+{
+  "parent": "sheltercraft:stone_age/craft_soaked_hide",
+  "criteria": {
+    "craft_tanned_hide": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:tanned_hide"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.craft_tanned_hide.description"
+    },
+    "icon": {
+      "id": "sheltercraft:tanned_hide"
+    },
+    "title": {
+      "translate": "advancement.stone_age.craft_tanned_hide.title"
+    }
+  },
+  "rewards": {
+    "recipes": [
+      "sheltercraft:drying_rack"
+    ]
+  },
+  "sends_telemetry_event": true
+}
