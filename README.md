@@ -15,21 +15,21 @@ World generation uses experimental features. Do not be afraid of the "Game creat
 
 ## Features
 
-- Flint chipping (right click on top of a stone block) and early-game flint tools using FlintFlakes
-- Gathering logs now requires an axe (Flint Hatchet before log harvesting)
-- Sticks may be gathered from leaves
-- Cutting Stump to transform logs into planks and planks into sticks (planks and sticks recipes are disabled)
-- FlintSickle to gather plant fibers from grass
-- Weave PlantFiber into Wicker (allows to craft WickerBasket for early-game storage)
-- Strainer to gather more flints from gravel + occasionally gather whetstone
-- Sharpening FlintFlakes with a Whetstone to craft SharpenedFlints (and relative tools)
+- __Flint chipping__ (right click on top of a stone block) and early-game flint tools using FlintFlakes.
+- Gathering logs now requires an axe (Flint Hatchet before log harvesting)/
+- Sticks may be gathered from leaves.
+- __CuttingStump__ to transform logs into planks and planks into sticks (planks and sticks recipes are disabled).
+- __FlintSickle__ to gather __PlantFibers__ from grass.
+- Weave PlantFiber into Wicker (allows to craft __WickerBasket__ for early-game storage).
+- __Strainer__ to gather more flints from gravel + occasionally gather __Whetstone__.
+- Sharpening FlintFlakes with a Whetstone to craft __SharpenedFlints__ (and relative tools).
 - Granite deposits contains blocks with Whetstones to gather more of them. Requires SharpenedFlint pickaxe or better.
-- Wooden and Stone tools are disabled.
-- Animals drop AnimalSkin that must be processed into Rawhide using a TrapperKnife
-- Salt Rawhide, Soak it, Tan it (using WoodenTub + Water + WoodBark), Dry it (using DryingRack) to obtain Leather
-- WoodenTub and DryingRack has long processing times (6 and 3 minutes respectively)
-- PotteryKiln to fire clay pots.
-- ClayTub for early salt production (evaporation) + early leather tanning
+- __Wooden and Stone tools are disabled.__
+- Animals drop __AnimalSkin__ that must be processed into __Rawhide__ using a __TrapperKnife__.
+- Salt Rawhide, Soak it, Tan it (using ClayTub + Water + WoodBark), Dry it (using DryingRack) to obtain Leather.
+- WoodenTub and DryingRack has long processing times (6 and 3 minutes respectively).
+- __PotteryKiln__ to fire clay pots.
+- __ClayTub__ for early Salt production (by evaporation) + early leather tanning.
 
 ![features.png](features.png)
 
@@ -57,27 +57,32 @@ Here is a quick list of the next features I plan to add:
 
 - Add a basic advancement page to help using mod in standalone mode
 
+#### Miscellaneous
+
+- Add mod configuration
+- Blocks orientation : allow to place PotteryKiln and DryingRack in different orientations
+- Fix all sounds and animations
+- Remove experimental feature warning or use a different world generation
+
 #### Leather Working - Improvements
 
 - LeatherWorkerHammer (one more step to leather)
 - For IronAge: wooden tanningTub to have 4 rawhide at same time (4x less water and faster)
 - For mod integration: possibility to automate using create Press + WindTurbine
 
+#### Pottery - Improvements
+
+- Add pottery recipes (for more storage options ? Maybe food storage ?)
 
 #### Cooking and Food balancing
 
 - Still in early design phase
 - Make early food sources scarcer
 - Make cooking more important (bonuses ? Meals to stack bonuses ?)
-- Do not make it too complex
+- Do not make it too complex (e.g. no food decay)
 
 #### Copper and Bronze Age
 
 - Still in early design phase
 - Unlock copper tools and maybe bronze tools
 - Make iron a mid-game resource
-
-#### Miscellaneous
-
-- Remove experimental feature warning or use a different world generation
-- Add mod configuration
