@@ -44,6 +44,7 @@ public class ClayTub extends BaseEntityBlock {
         super(properties
                 .setId(ModBlocks.REGISTER_BLOCKS.key("clay_tub"))
                 .strength(2.0f)
+                .requiresCorrectToolForDrops()
                 .noOcclusion());
     }
 
@@ -128,9 +129,13 @@ public class ClayTub extends BaseEntityBlock {
             BlockEntity blockEntity = level.getBlockEntity(pos);
             if (blockEntity instanceof ClayTubBE clayTubBE) {
                 if (clayTubBE.tanFluid()) {
-                    entity.discard();
-                    level.playSound(null, pos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 1.0f, 1.0f);
-                    stack.shrink(1); // consume one diamond
+                    level.playSound(entity, pos, SoundEvents.GENERIC_SPLASH, SoundSource.BLOCKS, 1.0f, 1.0f);
+                    stack.shrink(1);
+                    if (stack.isEmpty()) {
+                        itemEntity.discard();
+                    } else {
+                        itemEntity.setItem(stack);
+                    }
                     level.sendBlockUpdated(pos, state, state, 1 | 2 | 8);
                 }
             }

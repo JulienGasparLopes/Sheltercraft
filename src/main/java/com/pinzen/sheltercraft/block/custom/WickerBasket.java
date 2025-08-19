@@ -23,7 +23,7 @@ public class WickerBasket extends Block implements EntityBlock {
     public WickerBasket() {
         super(Block.Properties.of()
                 .setId(ModBlocks.REGISTER_BLOCKS.key("wicker_basket"))
-                .strength(1.0f)
+                .strength(0.75f)
                 .noOcclusion());
     }
 

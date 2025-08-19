@@ -35,7 +35,7 @@ public class PotteryKiln extends BaseEntityBlock {
     public PotteryKiln(Properties properties) {
         super(properties
                 .setId(ModBlocks.REGISTER_BLOCKS.key("pottery_kiln"))
-                .strength(2.0f)
+                .strength(3.0f)
                 .requiresCorrectToolForDrops()
                 .noOcclusion());
     }

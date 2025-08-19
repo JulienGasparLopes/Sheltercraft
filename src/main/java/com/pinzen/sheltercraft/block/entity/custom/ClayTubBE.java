@@ -20,7 +20,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 public class ClayTubBE extends BlockEntity {
 
-    private static final int PROCESSING_TICKS = 20 * 3; // 20 * 60 * 6;
+    private static final int PROCESSING_TICKS = 20 * 60 * 6;
 
     private FluidStack storedFluid = FluidStack.EMPTY;
     private boolean isTanned = false;

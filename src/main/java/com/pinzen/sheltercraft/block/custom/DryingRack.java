@@ -27,7 +27,7 @@ public class DryingRack extends BaseEntityBlock {
     public DryingRack() {
         super(Properties.of()
                 .setId(ModBlocks.REGISTER_BLOCKS.key("drying_rack"))
-                .strength(2.0f)
+                .strength(1.0f)
                 .noOcclusion());
     }
 

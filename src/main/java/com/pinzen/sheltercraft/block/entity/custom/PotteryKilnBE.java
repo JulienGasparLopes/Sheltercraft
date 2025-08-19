@@ -19,7 +19,7 @@ import net.minecraft.world.phys.AABB;
 
 public class PotteryKilnBE extends BlockEntity {
 
-    private static final int PROCESSING_TICKS = 20 * 3; // 20 * 60 * 6;
+    private static final int PROCESSING_TICKS = 20 * 60 * 6;
 
     private ItemStack storedItem = ItemStack.EMPTY;
     private int processedTicks = 0;
