@@ -1,4 +1,4 @@
-# Sheltercraft
+![SheltercraftLogoWidth.png](media/logo/SheltercraftLogoWidth.png)
 
 Minecraft mod providing a smoother early-game evolution.
 
@@ -33,7 +33,7 @@ Sheltercraft comes with an __in-game advancement page__ that fully describes all
 - __PotteryKiln__ to fire clay pots.
 - __ClayTub__ for early Salt production (by evaporation) + early leather tanning.
 
-![features.png](features.png)
+![features.png](media/screenshot/features.png)
 
 TODO: Sharpened Flint features screenshots (strainer, sharpened tools, granite with whetstone)
 
