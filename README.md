@@ -58,7 +58,6 @@ Here is a quick list of the next features I plan to add:
 
 #### Miscellaneous
 
-- Blocks orientation : allow to place PotteryKiln and DryingRack in different orientations
 - Add mod configuration
 - Fix all sounds and animations
 - Remove experimental feature warning or use a different world generation
