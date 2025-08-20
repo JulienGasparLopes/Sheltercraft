@@ -1,7 +1,8 @@
 {
-    "variants": {
-        "": {
-            "model": "sheltercraft:block/pottery_kiln"
-        }
-    }
+  "variants": {
+    "facing=south": { "model": "sheltercraft:block/pottery_kiln" },
+    "facing=north": { "model": "sheltercraft:block/pottery_kiln", "y": 180 },
+    "facing=east":  { "model": "sheltercraft:block/pottery_kiln", "y": 270 },
+    "facing=west":  { "model": "sheltercraft:block/pottery_kiln", "y": 90 }
+  }
 }
