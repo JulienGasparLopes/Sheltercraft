@@ -3,6 +3,7 @@ package com.pinzen.sheltercraft.block.custom;
 import com.mojang.serialization.MapCodec;
 import com.pinzen.sheltercraft.block.ModBlocks;
 import com.pinzen.sheltercraft.block.entity.custom.ClayTubBE;
+import com.pinzen.sheltercraft.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -94,7 +95,17 @@ public class ClayTub extends BaseEntityBlock {
                     pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
                     return InteractionResult.SUCCESS;
                 }
-            } else if (clayTubBE.addItem(heldItem)) {
+            }
+            else if (heldItem.is(ModItems.CLAY_BUCKET_WATER.get())) {
+                if (clayTubBE.addFluid(new FluidStack(Fluids.WATER, 1000))) {
+                    if (!pPlayer.isCreative()) {
+                        pPlayer.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(ModItems.CLAY_BUCKET_EMPTY.get()));
+                    }
+                    pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
+                    return InteractionResult.SUCCESS;
+                }
+            }
+            else if (clayTubBE.addItem(heldItem)) {
                 heldItem.shrink(1);
                 pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
                 return InteractionResult.SUCCESS;

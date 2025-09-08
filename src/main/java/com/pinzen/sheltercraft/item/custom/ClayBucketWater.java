@@ -16,7 +16,7 @@ import net.minecraftforge.fluids.FluidStack;
 public class ClayBucketWater extends Item {
 
     public ClayBucketWater(Properties pProperties) {
-        super(pProperties);
+        super(pProperties.stacksTo(1));
     }
 
     @Override
