@@ -1,5 +1,5 @@
 {
-  "parent": "sheltercraft:stone_age/get_flint_flake",
+  "parent": "sheltercraft:stone_age/craft_flint_hatchet",
   "criteria": {
     "get_wood_bark": {
       "conditions": {

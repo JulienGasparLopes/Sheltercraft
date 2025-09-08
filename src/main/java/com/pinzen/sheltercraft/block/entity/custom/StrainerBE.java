@@ -60,7 +60,7 @@ public class StrainerBE extends BlockEntity {
 
         if (shakeCount >= 4) {
             returnedItems.add(new ItemStack(Items.FLINT, 1));
-            if (player.getRandom().nextInt(20) == 0) {
+            if (player.getRandom().nextInt(12) == 0) {
                 returnedItems.add(new ItemStack(ModItems.WHETSTONE.get(), 1));
             }
             this.heldItem = ItemStack.EMPTY;

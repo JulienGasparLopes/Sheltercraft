@@ -1,0 +1,28 @@
+{
+  "parent": "sheltercraft:stone_age/get_sharpened_flint",
+  "criteria": {
+    "craft_sharpened_flint_pickaxe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:sharpened_flint_pickaxe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "hidden": false,
+    "description": {
+      "translate": "advancement.stone_age.craft_sharpened_flint_pickaxe.description"
+    },
+    "icon": {
+      "id": "sheltercraft:sharpened_flint_pickaxe"
+    },
+    "title": {
+      "translate": "advancement.stone_age.craft_sharpened_flint_pickaxe.title"
+    }
+  },
+  "sends_telemetry_event": true
+}

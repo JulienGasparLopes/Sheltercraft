@@ -23,6 +23,9 @@ public class ModCreativeModInventory {
             event.accept(ModItems.SHARPENED_FLINT_SHOVEL);
             event.accept(ModItems.SHARPENED_FLINT_SICKLE);
             event.accept(ModItems.SHARPENED_FLINT_TRAPPER_KNIFE);
+
+            event.accept(ModItems.CLAY_BUCKET_EMPTY);
+            event.accept(ModItems.CLAY_BUCKET_WATER);
         }
         else if( event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.GRANITE_WITH_WHETSTONE);
@@ -53,6 +56,7 @@ public class ModCreativeModInventory {
             event.accept(ModItems.WOOD_BARK);
 
             event.accept(ModItems.UNFIRED_CLAY_TUB);
+            event.accept(ModItems.UNFIRED_CLAY_BUCKET);
         }
     }
 

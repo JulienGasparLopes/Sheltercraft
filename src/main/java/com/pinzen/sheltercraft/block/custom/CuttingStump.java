@@ -8,6 +8,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -24,6 +25,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.List;
 
 public class CuttingStump extends Block implements EntityBlock {
+    public static final float SATURATION_COST_PER_CUT = 2f;
 
     public CuttingStump() {
         super(Block.Properties.of()
@@ -44,9 +46,16 @@ public class CuttingStump extends Block implements EntityBlock {
             BlockEntity be = pLevel.getBlockEntity(pPos);
             if (be instanceof CuttingStumpBE cuttingStumpBE) {
                 ItemStack heldItem = pPlayer.getMainHandItem();
-                if (heldItem.is(ItemTags.AXES)) {
+                FoodData foodData = pPlayer.getFoodData();
+                if (heldItem.is(ItemTags.AXES) && foodData.getSaturationLevel() >= SATURATION_COST_PER_CUT) {
+                    foodData.setSaturation(foodData.getSaturationLevel() - SATURATION_COST_PER_CUT);
+                    // Remove 1 food level to allow player to eat again
+                    if (foodData.getSaturationLevel() < SATURATION_COST_PER_CUT) {
+                        foodData.setFoodLevel(foodData.getFoodLevel() - 1);
+                    }
                     ItemStack planks = cuttingStumpBE.processCutting(pPlayer);
                     if (!planks.isEmpty()) {
+                        heldItem.hurtAndBreak(1, pPlayer, InteractionHand.MAIN_HAND);
                         pLevel.sendBlockUpdated(pPos, pState, pState, 1 | 2 | 8);
                         pLevel.addFreshEntity(new ItemEntity(
                                 pLevel,

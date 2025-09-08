@@ -30,7 +30,8 @@
       "sheltercraft:flint_axe",
       "sheltercraft:flint_pickaxe",
       "sheltercraft:flint_shovel",
-      "sheltercraft:flint_sickle"
+      "sheltercraft:flint_sickle",
+      "sheltercraft:flint_trapper_knife"
     ]
   },
   "sends_telemetry_event": true

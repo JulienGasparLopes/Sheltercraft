@@ -42,7 +42,7 @@ public class PotteryKilnBE extends BlockEntity {
 
     public boolean addItem(ItemStack item) {
         if (this.storedItem.isEmpty()) {
-            if(item.is(ModItems.UNFIRED_CLAY_TUB.get())) {
+            if(item.is(ModItems.UNFIRED_CLAY_TUB.get()) || item.is(ModItems.UNFIRED_CLAY_BUCKET.get())) {
                 this.storedItem = item.copy();
                 this.storedItem.setCount(1);
                 this.processedTicks = 0;
@@ -65,10 +65,14 @@ public class PotteryKilnBE extends BlockEntity {
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
-        if (this.isFired() && this.storedItem.is(ModItems.UNFIRED_CLAY_TUB.get())) {
+        if (this.isFired() && !this.storedItem.isEmpty()) {
             this.processedTicks++;
             if (this.processedTicks >= PROCESSING_TICKS) {
-                this.storedItem = new ItemStack(ModBlocks.CLAY_TUB_ITEM.get());
+                if (this.storedItem.is(ModItems.UNFIRED_CLAY_TUB.get())) {
+                    this.storedItem = new ItemStack(ModBlocks.CLAY_TUB_ITEM.get());
+                } else if (this.storedItem.is(ModItems.UNFIRED_CLAY_BUCKET.get())) {
+                    this.storedItem = new ItemStack(ModItems.CLAY_BUCKET_EMPTY.get());
+                }
                 this.processedTicks = 0;
                 setChanged();
                 level.sendBlockUpdated(blockPos, blockState, blockState, 1 | 2 | 8);

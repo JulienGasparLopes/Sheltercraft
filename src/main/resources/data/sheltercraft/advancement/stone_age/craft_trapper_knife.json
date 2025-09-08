@@ -1,17 +1,30 @@
 {
   "parent": "sheltercraft:stone_age/craft_crafting_table",
   "criteria": {
-    "craft_trapper_knife": {
+    "craft_flint_trapper_knife": {
       "conditions": {
         "items": [
           {
-            "tag": "sheltercraft:item/trapper_knife"
+            "items": "sheltercraft:flint_trapper_knife"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "craft_sharpened_flint_trapper_knife": {
+      "conditions": {
+        "items": [
+          {
+            "items": "sheltercraft:sharpened_flint_trapper_knife"
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     }
   },
+  "requirements": [
+    ["craft_flint_trapper_knife", "craft_sharpened_flint_trapper_knife"]
+  ],
   "display": {
     "hidden": false,
     "description": {

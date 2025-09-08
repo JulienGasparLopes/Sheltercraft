@@ -63,7 +63,7 @@ public class WickerBasketMenu extends AbstractContainerMenu {
             // If the quick move was performed on the data inventory
             if (quickMovedSlotIndex < WickerBasketBE.SLOT_COUNT ) {
                 // Try to move the result slot into the player inventory/hotbar
-                if (!this.moveItemStackTo(rawStack, 5, 41, true)) {
+                if (!this.moveItemStackTo(rawStack, WickerBasketBE.SLOT_COUNT + 1, WickerBasketBE.SLOT_COUNT + 27 + 9, true)) {
                     // If it cannot be moved, stop quick move
                     return ItemStack.EMPTY;
                 }
@@ -72,16 +72,16 @@ public class WickerBasketMenu extends AbstractContainerMenu {
             // Else if the quick move was performed on the player inventory or hotbar slot
             else if (quickMovedSlotIndex < WickerBasketBE.SLOT_COUNT + 27 + 9) {
                 // Try to move the inventory/hotbar slot into the data inventory input slots
-                if (!this.moveItemStackTo(rawStack, 1, 5, false)) {
+                if (!this.moveItemStackTo(rawStack, 0, WickerBasketBE.SLOT_COUNT, false)) {
                     // If it cannot be moved in player inventory slot, try to move to hotbar
                     if (quickMovedSlotIndex < WickerBasketBE.SLOT_COUNT + 27) {
-                        if (!this.moveItemStackTo(rawStack, 32, 41, false)) {
+                        if (!this.moveItemStackTo(rawStack, WickerBasketBE.SLOT_COUNT + 27, WickerBasketBE.SLOT_COUNT + 27 + 9, false)) {
                             // If it cannot be moved, stop quick move
                             return ItemStack.EMPTY;
                         }
                     }
                     // Else try to move hotbar into player inventory slot
-                    else if (!this.moveItemStackTo(rawStack, 5, 32, false)) {
+                    else if (!this.moveItemStackTo(rawStack, WickerBasketBE.SLOT_COUNT, WickerBasketBE.SLOT_COUNT + 27, false)) {
                         // If it cannot be moved, stop quick move
                         return ItemStack.EMPTY;
                     }

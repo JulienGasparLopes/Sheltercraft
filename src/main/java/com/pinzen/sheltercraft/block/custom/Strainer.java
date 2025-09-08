@@ -7,6 +7,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.food.FoodData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -22,6 +23,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.List;
 
 public class Strainer extends Block implements EntityBlock {
+    public static final float SATURATION_COST_PER_SHAKE = 2f;
+
     public Strainer() {
         super(Block.Properties.of()
                 .setId(ModBlocks.REGISTER_BLOCKS.key("strainer"))
@@ -68,7 +71,13 @@ public class Strainer extends Block implements EntityBlock {
     protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
         BlockEntity be = pLevel.getBlockEntity(pPos);
         if (be instanceof StrainerBE strainerBE) {
-            if (!pPlayer.getCooldowns().isOnCooldown(pPlayer.getMainHandItem())) {
+            FoodData foodData = pPlayer.getFoodData();
+            if (!pPlayer.getCooldowns().isOnCooldown(pPlayer.getMainHandItem()) && foodData.getSaturationLevel() >= SATURATION_COST_PER_SHAKE) {
+                foodData.setSaturation(foodData.getSaturationLevel() - SATURATION_COST_PER_SHAKE);
+                // Remove 1 food level to allow player to eat again
+                if (foodData.getSaturationLevel() < SATURATION_COST_PER_SHAKE) {
+                    foodData.setFoodLevel(foodData.getFoodLevel() - 1);
+                }
                 pPlayer.getCooldowns().addCooldown(pPlayer.getMainHandItem(), 10);
                 pPlayer.swing(InteractionHand.MAIN_HAND);
                 if (!pLevel.isClientSide) {

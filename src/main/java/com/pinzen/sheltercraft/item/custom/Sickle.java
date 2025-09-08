@@ -2,6 +2,7 @@ package com.pinzen.sheltercraft.item.custom;
 
 import com.pinzen.sheltercraft.item.ModItems;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
@@ -26,6 +27,7 @@ public class Sickle extends Item {
     @Override
     public boolean mineBlock(ItemStack pStack, Level pLevel, BlockState pState, BlockPos pPos, LivingEntity pMiningEntity) {
         if (!pLevel.isClientSide && pState.is(MINEABLE_WITH_SICKLE)) {
+            pStack.hurtAndBreak(1, pMiningEntity, InteractionHand.MAIN_HAND);
             pLevel.addFreshEntity(
                     new ItemEntity(
                             pLevel,

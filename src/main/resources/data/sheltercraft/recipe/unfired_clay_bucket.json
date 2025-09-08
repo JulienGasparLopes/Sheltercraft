@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "mirrored": true,
+  "pattern": [
+    "C C",
+    "CCC"
+  ],
+  "key": {
+    "C": "minecraft:clay_ball"
+  },
+  "result": {
+    "id": "sheltercraft:unfired_clay_bucket"
+  }
+}

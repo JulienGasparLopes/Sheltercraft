@@ -1,11 +1,11 @@
 {
-  "parent": "sheltercraft:stone_age/get_sharpened_flint",
+  "parent": "sheltercraft:stone_age/craft_sharpened_flint_pickaxe",
   "criteria": {
     "mine_granite_with_whetstone": {
       "conditions": {
         "items": [
           {
-            "items": "sheltercraft:granite_with_whetstone",
+            "items": "sheltercraft:whetstone",
             "count": {
               "min": 32
             }

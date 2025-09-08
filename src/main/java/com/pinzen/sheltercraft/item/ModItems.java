@@ -1,10 +1,8 @@
 package com.pinzen.sheltercraft.item;
 
 import com.pinzen.sheltercraft.Sheltercraft;
-import com.pinzen.sheltercraft.item.custom.TrapperKnife;
-import com.pinzen.sheltercraft.item.custom.Whetstone;
+import com.pinzen.sheltercraft.item.custom.*;
 import com.pinzen.sheltercraft.util.Helpers;
-import com.pinzen.sheltercraft.item.custom.Sickle;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.bus.BusGroup;
 import net.minecraftforge.registries.DeferredRegister;
@@ -159,6 +157,22 @@ public class ModItems {
             "unfired_clay_tub",
             () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("unfired_clay_tub")))
     );
+    public static final RegistryObject<Item> UNFIRED_CLAY_BUCKET = REGISTER_ITEMS.register(
+            "unfired_clay_bucket",
+            () -> new Item(new Item.Properties().setId(Helpers.resKeyItem("unfired_clay_bucket")))
+    );
+
+    public static final RegistryObject<Item> CLAY_BUCKET_EMPTY = REGISTER_ITEMS.register(
+            "clay_bucket_empty",
+            () -> new ClayBucketEmpty(new Item.Properties().setId(Helpers.resKeyItem("clay_bucket_empty")))
+    );
+    public static final RegistryObject<Item> CLAY_BUCKET_WATER = REGISTER_ITEMS.register(
+            "clay_bucket_water",
+            () -> new ClayBucketWater(new Item.Properties().setId(Helpers.resKeyItem("clay_bucket_water")))
+    );
+
+
+
 
     public static void register(BusGroup busGroup) {
         REGISTER_ITEMS.register(busGroup);
