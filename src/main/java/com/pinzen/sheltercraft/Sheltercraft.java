@@ -28,13 +28,27 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
+/**
+ * TODO List
+ * ---------
+ * 
+ * - Sound: flint knapping, gravel straining, wood chopping
+ *
+ * - Strainer drop whetstone on a fixed chance
+ * - Adv TrapperKnife -> based on trapper_knifes tag
+ * - Add a way to empty clay buckets (and clayTub ?)
+ * - Stainer -> allow to use it without full hunger bar
+ */
+
 @Mod(Sheltercraft.MOD_ID)
 public final class Sheltercraft {
     public static final String MOD_ID = "sheltercraft";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public static final DeferredRegister<BlockEntityType<?>> REGISTER_BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
-    public static final DeferredRegister<MenuType<?>> REGISTER_MENUS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> REGISTER_BLOCK_ENTITIES = DeferredRegister
+            .create(ForgeRegistries.BLOCK_ENTITY_TYPES, MOD_ID);
+    public static final DeferredRegister<MenuType<?>> REGISTER_MENUS = DeferredRegister
+            .create(ForgeRegistries.MENU_TYPES, MOD_ID);
 
     public Sheltercraft(FMLJavaModLoadingContext context) {
         BusGroup modBusGroup = context.getModBusGroup();
@@ -57,7 +71,6 @@ public final class Sheltercraft {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
-
 
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {

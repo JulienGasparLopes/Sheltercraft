@@ -11,7 +11,13 @@ Gather flints, sharpen them, cut logs on a stump, weave plant fiber into wicker 
 - Minecraft version: 1.21.8
 - Forge version: 58.0.4
 
-World generation uses experimental features. Do not be afraid of the "Game creation" warning.
+## Read before playing this mod !
+
+This mod was tested and some small bugs persist. I propose this to download and use as the features are (I think) interesting and may be usefull for people wanting to develop a modpack with an immersive early game.
+
+Feel free to leave a message (Forge comment section or issue on Github) to let me know what you think of the mod and what is your purpose using it. I will continue updating/improving this mod if people are interested in using it !
+
+Importtant : World generation uses experimental features. Do not be afraid of the "Game creation" warning.
 
 ## Features
 
@@ -33,13 +39,13 @@ Sheltercraft comes with an __in-game advancement page__ that fully describes all
 - __PotteryKiln__ to fire clay pots.
 - __ClayTub__ for early Salt production (by evaporation) + early leather tanning.
 
-![features.png](media/screenshot/features.png)
+![feature_fiber_logging.png](media/screenshot/feature_fiber_logging.png)
 
-TODO: Sharpened Flint features screenshots (strainer, sharpened tools, granite with whetstone)
+![feature_leather_working.png](media/screenshot/feature_leather_working.png)
 
-TODO: Leather working screenshots (rawhide, leather, wooden tub, drying rack, trapper knife)
+![feature_whetstone_strainer.png](media/screenshot/feature_whetstone_strainer.png)
 
-TODO: Pottery features screenshots
+![feature_pottery.png](media/screenshot/feature_pottery.png)
 
 ## License
 
@@ -51,9 +57,7 @@ All code/textures/models are original and free of right (license coming soon).
 
 For any question, suggestion or issue, feel free to open an issue.
 
-This mod is developed in order to be integrated into a modpack I'll be working on as soon as this mod is stable enough.
-
-Here is a quick list of the next features I plan to add:
+Here is a quick list of possible ideas I may or may not add:
 
 
 #### Miscellaneous
