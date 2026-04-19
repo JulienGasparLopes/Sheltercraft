@@ -15,7 +15,7 @@ Gather flints, sharpen them, cut logs on a stump, weave plant fiber into wicker 
 
 This mod was tested and some small bugs persist. I propose this to download and use as the features are (I think) interesting and may be usefull for people wanting to develop a modpack with an immersive early game.
 
-Feel free to leave a message (Forge comment section or issue on Github) to let me know what you think of the mod and what is your purpose using it. I will continue updating/improving this mod if people are interested in using it !
+Feel free to leave a message (CurseForge comment section or issue on Github) to let me know what you think of the mod and what is your purpose using it. I will continue updating/improving this mod if people are interested in using it !
 
 Importtant : World generation uses experimental features. Do not be afraid of the "Game creation" warning.
 
