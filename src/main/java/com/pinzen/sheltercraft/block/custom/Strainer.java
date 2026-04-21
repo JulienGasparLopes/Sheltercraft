@@ -23,7 +23,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.List;
 
 public class Strainer extends Block implements EntityBlock {
-    public static final float SATURATION_COST_PER_SHAKE = 2f;
+    public static final float FOOD_COST_PER_SHAKE = 1f;
 
     public Strainer() {
         super(Block.Properties.of()
@@ -44,12 +44,12 @@ public class Strainer extends Block implements EntityBlock {
 
     @Override
     protected InteractionResult useItemOn(
-            ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult
-    ) {
+            ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
+            BlockHitResult pHitResult) {
         BlockEntity be = pLevel.getBlockEntity(pPos);
         ItemStack heldItem = pPlayer.getMainHandItem();
         if (be instanceof StrainerBE strainerBE) {
-            if(heldItem.is(Items.GRAVEL)) {
+            if (heldItem.is(Items.GRAVEL)) {
                 boolean itemAdded = strainerBE.addItem(heldItem);
                 if (itemAdded) {
                     pPlayer.swing(InteractionHand.MAIN_HAND);
@@ -59,8 +59,7 @@ public class Strainer extends Block implements EntityBlock {
                     }
                     return InteractionResult.SUCCESS;
                 }
-            }
-            else if (heldItem.isEmpty()) {
+            } else if (heldItem.isEmpty()) {
                 return InteractionResult.TRY_WITH_EMPTY_HAND;
             }
         }
@@ -68,16 +67,14 @@ public class Strainer extends Block implements EntityBlock {
     }
 
     @Override
-    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, BlockHitResult pHitResult) {
+    protected InteractionResult useWithoutItem(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer,
+            BlockHitResult pHitResult) {
         BlockEntity be = pLevel.getBlockEntity(pPos);
         if (be instanceof StrainerBE strainerBE) {
             FoodData foodData = pPlayer.getFoodData();
-            if (!pPlayer.getCooldowns().isOnCooldown(pPlayer.getMainHandItem()) && foodData.getSaturationLevel() >= SATURATION_COST_PER_SHAKE) {
-                foodData.setSaturation(foodData.getSaturationLevel() - SATURATION_COST_PER_SHAKE);
-                // Remove 1 food level to allow player to eat again
-                if (foodData.getSaturationLevel() < SATURATION_COST_PER_SHAKE) {
-                    foodData.setFoodLevel(foodData.getFoodLevel() - 1);
-                }
+            if (!pPlayer.getCooldowns().isOnCooldown(pPlayer.getMainHandItem())
+                    && foodData.getFoodLevel() >= 3 * FOOD_COST_PER_SHAKE) {
+                foodData.setFoodLevel(foodData.getFoodLevel() - (int) FOOD_COST_PER_SHAKE);
                 pPlayer.getCooldowns().addCooldown(pPlayer.getMainHandItem(), 10);
                 pPlayer.swing(InteractionHand.MAIN_HAND);
                 if (!pLevel.isClientSide) {
@@ -86,14 +83,14 @@ public class Strainer extends Block implements EntityBlock {
                     List<ItemStack> results = strainerBE.shake(pPlayer);
                     if (!results.isEmpty()) {
                         for (ItemStack res : results) {
-                            if (res.isEmpty()) continue;
+                            if (res.isEmpty())
+                                continue;
                             pLevel.addFreshEntity(new ItemEntity(
                                     pLevel,
                                     pPos.getX() + 0.5,
                                     pPos.getY(),
                                     pPos.getZ() + 0.5,
-                                    res
-                            ));
+                                    res));
                         }
                     }
                     return InteractionResult.SUCCESS;

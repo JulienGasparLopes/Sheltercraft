@@ -25,7 +25,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import java.util.List;
 
 public class CuttingStump extends Block implements EntityBlock {
-    public static final float SATURATION_COST_PER_CUT = 2f;
+    public static final float FOOD_COST_PER_CUT = 1.0f;
 
     public CuttingStump() {
         super(Block.Properties.of()
@@ -47,12 +47,8 @@ public class CuttingStump extends Block implements EntityBlock {
             if (be instanceof CuttingStumpBE cuttingStumpBE) {
                 ItemStack heldItem = pPlayer.getMainHandItem();
                 FoodData foodData = pPlayer.getFoodData();
-                if (heldItem.is(ItemTags.AXES) && foodData.getSaturationLevel() >= SATURATION_COST_PER_CUT) {
-                    foodData.setSaturation(foodData.getSaturationLevel() - SATURATION_COST_PER_CUT);
-                    // Remove 1 food level to allow player to eat again
-                    if (foodData.getSaturationLevel() < SATURATION_COST_PER_CUT) {
-                        foodData.setFoodLevel(foodData.getFoodLevel() - 1);
-                    }
+                if (heldItem.is(ItemTags.AXES) && foodData.getFoodLevel() >= 3 * FOOD_COST_PER_CUT) {
+                    foodData.setFoodLevel(foodData.getFoodLevel() - (int) FOOD_COST_PER_CUT);
                     ItemStack planks = cuttingStumpBE.processCutting(pPlayer);
                     if (!planks.isEmpty()) {
                         heldItem.hurtAndBreak(1, pPlayer, InteractionHand.MAIN_HAND);
@@ -62,8 +58,7 @@ public class CuttingStump extends Block implements EntityBlock {
                                 pPos.getX() + 0.5,
                                 pPos.getY() + 1,
                                 pPos.getZ() + 0.5,
-                                planks
-                        ));
+                                planks));
                         return;
                     }
                 }
@@ -74,8 +69,8 @@ public class CuttingStump extends Block implements EntityBlock {
 
     @Override
     protected InteractionResult useItemOn(
-            ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult
-    ) {
+            ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
+            BlockHitResult pHitResult) {
         BlockEntity be = pLevel.getBlockEntity(pPos);
         ItemStack heldItem = pPlayer.getMainHandItem();
         if (be instanceof CuttingStumpBE cuttingStumpBE) {

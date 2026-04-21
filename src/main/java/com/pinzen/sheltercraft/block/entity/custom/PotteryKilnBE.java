@@ -16,10 +16,9 @@ import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.world.phys.AABB;
 
-
 public class PotteryKilnBE extends BlockEntity {
 
-    private static final int PROCESSING_TICKS = 20 * 60 * 6;
+    private static final int PROCESSING_TICKS = 20 * 20;
 
     private ItemStack storedItem = ItemStack.EMPTY;
     private int processedTicks = 0;
@@ -28,7 +27,7 @@ public class PotteryKilnBE extends BlockEntity {
         super(ModBlocks.POTTERY_KILN_BE.get(), pos, state);
     }
 
-    public boolean isFired () {
+    public boolean isFired() {
         if (this.level == null) {
             return false;
         }
@@ -42,7 +41,7 @@ public class PotteryKilnBE extends BlockEntity {
 
     public boolean addItem(ItemStack item) {
         if (this.storedItem.isEmpty()) {
-            if(item.is(ModItems.UNFIRED_CLAY_TUB.get()) || item.is(ModItems.UNFIRED_CLAY_BUCKET.get())) {
+            if (item.is(ModItems.UNFIRED_CLAY_TUB.get()) || item.is(ModItems.UNFIRED_CLAY_BUCKET.get())) {
                 this.storedItem = item.copy();
                 this.storedItem.setCount(1);
                 this.processedTicks = 0;

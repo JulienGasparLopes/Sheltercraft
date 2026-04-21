@@ -20,7 +20,7 @@ import net.minecraftforge.fluids.FluidStack;
 
 public class ClayTubBE extends BlockEntity {
 
-    private static final int PROCESSING_TICKS = 20 * 60 * 6;
+    private static final int PROCESSING_TICKS = 20 * 60;
 
     private FluidStack storedFluid = FluidStack.EMPTY;
     private boolean isTanned = false;
@@ -87,7 +87,7 @@ public class ClayTubBE extends BlockEntity {
         return storedFluid.copy();
     }
 
-    public boolean isFluidTanned () {
+    public boolean isFluidTanned() {
         return isTanned;
     }
 
@@ -108,7 +108,8 @@ public class ClayTubBE extends BlockEntity {
     }
 
     public void tick(Level level, BlockPos blockPos, BlockState blockState) {
-        if (this.processingItem.is(ModItems.CURED_HIDE.get()) && this.storedFluid.getFluid().isSame(Fluids.WATER) && !this.isTanned) {
+        if (this.processingItem.is(ModItems.CURED_HIDE.get()) && this.storedFluid.getFluid().isSame(Fluids.WATER)
+                && !this.isTanned) {
             if (processedTicks < PROCESSING_TICKS) {
                 processedTicks++;
             } else {
@@ -117,8 +118,8 @@ public class ClayTubBE extends BlockEntity {
                 level.sendBlockUpdated(this.worldPosition, blockState, blockState, 1 | 2 | 8);
                 setChanged();
             }
-        }
-        else if (this.processingItem.is(ModItems.SOAKED_HIDE.get()) && this.storedFluid.getFluid().isSame(Fluids.WATER) && this.isTanned) {
+        } else if (this.processingItem.is(ModItems.SOAKED_HIDE.get())
+                && this.storedFluid.getFluid().isSame(Fluids.WATER) && this.isTanned) {
             if (processedTicks < PROCESSING_TICKS) {
                 processedTicks++;
             } else {
@@ -128,17 +129,15 @@ public class ClayTubBE extends BlockEntity {
                 level.sendBlockUpdated(this.worldPosition, blockState, blockState, 1 | 2 | 8);
                 setChanged();
             }
-        }
-        else if (this.processingItem.isEmpty() && this.storedFluid.getFluid().isSame(Fluids.WATER) && !this.isTanned) {
+        } else if (this.processingItem.isEmpty() && this.storedFluid.getFluid().isSame(Fluids.WATER)
+                && !this.isTanned) {
             if (processedTicks < PROCESSING_TICKS) {
                 if (level.getBlockState(blockPos.atY(blockPos.getY() - 1)).is(Blocks.CAMPFIRE)) {
                     processedTicks += 4;
-                }
-                else {
+                } else {
                     processedTicks++;
                 }
-            }
-            else {
+            } else {
                 this.processingItem = new ItemStack(ModItems.SALT.get());
                 this.storedFluid = FluidStack.EMPTY;
                 this.isTanned = false;
