@@ -17,7 +17,7 @@ This mod was tested and some small bugs persist. I propose this to download and 
 
 Feel free to leave a message (CurseForge comment section or issue on Github) to let me know what you think of the mod and what is your purpose using it. I will continue updating/improving this mod if people are interested in using it !
 
-Importtant : World generation uses experimental features. Do not be afraid of the "Game creation" warning.
+Important : World generation uses experimental features. Do not be afraid of the "Game creation" warning.
 
 ## Features
 

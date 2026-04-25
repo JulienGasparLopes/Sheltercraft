@@ -24,10 +24,9 @@ public class DryingRackBE extends BlockEntity {
     private int dryingTickCount1 = 0;
     private int dryingTickCount2 = 0;
 
-    private static final int DRYING_TICKS = 20 * 60 * 3;
+    private static final int DRYING_TICKS = 20 * 60 * 2;
     private static final List<Item> DRYABLE_ITEMS = List.of(
-            ModItems.TANNED_HIDE.get()
-    );
+            ModItems.TANNED_HIDE.get());
 
     public DryingRackBE(BlockPos pos, BlockState state) {
         super(ModBlocks.DRYING_RACK_BE.get(), pos, state);
@@ -49,10 +48,9 @@ public class DryingRackBE extends BlockEntity {
         toAdd.setCount(1);
 
         if (this.dryingItem1.isEmpty()) {
-                this.dryingItem1 = toAdd;
-                this.dryingTickCount1 = 0;
-        }
-        else {
+            this.dryingItem1 = toAdd;
+            this.dryingTickCount1 = 0;
+        } else {
             this.dryingItem2 = toAdd;
             this.dryingTickCount2 = 0;
 
@@ -68,18 +66,15 @@ public class DryingRackBE extends BlockEntity {
             toReturn = this.dryingItem1.copy();
             this.dryingItem1 = ItemStack.EMPTY;
             this.dryingTickCount1 = 0;
-        }
-        else if (this.dryingTickCount2 > DRYING_TICKS) {
+        } else if (this.dryingTickCount2 > DRYING_TICKS) {
             toReturn = this.dryingItem2.copy();
             this.dryingItem2 = ItemStack.EMPTY;
             this.dryingTickCount2 = 0;
-        }
-        else if (!this.dryingItem1.isEmpty()) {
+        } else if (!this.dryingItem1.isEmpty()) {
             toReturn = this.dryingItem1.copy();
             this.dryingItem1 = ItemStack.EMPTY;
             this.dryingTickCount1 = 0;
-        }
-        else if (!this.dryingItem2.isEmpty()) {
+        } else if (!this.dryingItem2.isEmpty()) {
             toReturn = this.dryingItem2.copy();
             this.dryingItem2 = ItemStack.EMPTY;
             this.dryingTickCount2 = 0;
